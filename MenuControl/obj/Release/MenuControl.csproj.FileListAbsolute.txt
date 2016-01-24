@@ -1,0 +1,5 @@
+G:\FYPWork\FYPAutomation\MenuControl\bin\Release\MenuControl.dll
+G:\FYPWork\FYPAutomation\MenuControl\bin\Release\MenuControl.pdb
+G:\FYPWork\FYPAutomation\MenuControl\obj\Release\MenuControl.csprojResolveAssemblyReference.cache
+G:\FYPWork\FYPAutomation\MenuControl\obj\Release\MenuControl.dll
+G:\FYPWork\FYPAutomation\MenuControl\obj\Release\MenuControl.pdb

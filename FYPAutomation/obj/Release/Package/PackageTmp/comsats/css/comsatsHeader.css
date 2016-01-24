@@ -1,0 +1,298 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #353535;
+    background: #fff;
+    font-family: 'Open Sans', 'Open Sans', verdana, Helvetica, sans-serif;
+}
+
+.headup_wrap {
+    float: left;
+    width: 100%;
+    height: 40px;
+    background: #444;
+}
+
+.headup {
+    float: left;
+    /*width: 1000px;*/
+    width: 1235px;
+    height: 40px;
+    background: #444;
+    margin: 0 auto 0 auto;
+}
+
+.upmenu {
+    float: right;
+    width: 522px;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    left: 18%;
+}
+
+.header_wrap {
+    float: left;
+    width: 100%;
+    height: 110px;
+    background: #fff;
+}
+
+.header {
+    width: 1000px;
+    margin: 0 auto 0 auto;
+    height: 110px;
+    position: relative;
+    overflow: hidden;
+    background-image: url('../images/comsatsHeader.jpg');
+    background-repeat: no-repeat;
+}
+
+.menu_bar_wrap {
+    float: left;
+    width: 100%;
+    margin: 2px 0 10px 0;
+    z-index: 16;
+    background: #005CA7;
+    border-bottom: 1px solid #111;
+}
+
+.menu_bar {
+    width: 1000px;
+    margin: 0 auto 0 auto;
+    z-index: 16;
+    background: #005CA7;
+    font-size: 13px;
+}
+
+.right_wrap {
+    float: right;
+    width: 422px;
+    height: 110px;
+    position: relative;
+    overflow: hidden;
+}
+
+.right_head_btns {
+    float: right;
+    width: 388px;
+    height: 36px;
+    margin-right: 0;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/*===========*/
+#centeredmenu ul {
+    float: right;
+    list-style: none;
+    margin: 10px 0 0 0;
+    padding: 0;
+    position: relative;
+}
+
+    #centeredmenu ul li {
+        display: block;
+        float: left;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+        #centeredmenu ul li a {
+            display: block;
+            margin: 3px 0 0 1px;
+            border-right: 0px solid #ccc;
+            padding: 0px 7px;
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.3em;
+            font-size: 12px;
+        }
+
+            #centeredmenu ul li a:hover {
+                color: #eee;
+            }
+
+            #centeredmenu ul li a.active,
+            #centeredmenu ul li a.active:hover {
+                color: #fff;
+                font-weight: normal;
+            }
+/*===========*/
+
+ul#nav {
+    float: left;
+    font-size: 82%;
+    border-width: 0 5px 0 5px;
+    z-index: 99;
+}
+
+#nav {
+    float: right;
+}
+
+/*---------------footer------------------*/
+.footer {
+    float: left;
+    width: 100%;
+    background: #333;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    height: 80px;
+    border-top: 4px solid #111;
+}
+
+.ft {
+    WIDTH: 1000px;
+    COLOR: #d3d3d3;
+    overflow: hidden;
+    height: 100%;
+    margin: 0 auto 0 auto;
+}
+
+.address {
+    FLOAT: left;
+    MARGIN-RIGHT: auto;
+    margin-left: 0;
+    margin-top: 7px;
+}
+
+.socio_icons {
+    float: right;
+    width: 128px;
+    height: 16px;
+}
+
+.footdown {
+    float: left;
+    width: 100%;
+    height: 35px;
+    background: #111;
+    font-family: 'Open Sans', Arial;
+    color: #999;
+    position: relative;
+    overflow: hidden;
+}
+
+.ftdown {
+    margin: 0 auto 0 auto;
+    width: 1000px;
+    height: 35px;
+}
+
+    .ftdown p {
+        float: right;
+        padding: 10px 0 0 0;
+        font-size: 12px;
+    }
+
+.address h2 {
+    font-family: 'Open Sans', arial, verdana, helvatica;
+    font-size: 15px;
+    color: #fff;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+.address p {
+    font-family: 'Open Sans', arial, verdana, helvatica;
+    font-size: 12px;
+    color: #999;
+    line-height: 18px;
+}
+
+.little_box {
+    float: left;
+    border: 1px solid #ccc;
+    background: #f0f8ff url('../images/pnl.jpg') repeat-x top;
+    width: 180px;
+}
+
+.box {
+   border-bottom: 0px solid #DFDFDA;
+    border-top: 0px solid #FFF;
+    padding: 10px 10px 0;
+    font-family: 'Open Sans';
+}
+
+.box-title {
+    color: #fff;
+    font: normal 1.2em 'Open Sans', 'Open Sans';
+    border-bottom: 0px dotted #555;
+    padding-bottom: 0;
+    margin-top: 0;
+    background: transparent url(../images/newspaper.png) center left no-repeat;
+    display: inline-block;
+    padding-left: 30px;
+    line-height: 24px;
+}
+
+.box-content {
+    padding: 8px 0;
+    overflow: hidden;
+}
+
+
+ul.nice-list1 {
+    border-top: 0px solid #E5E5E5;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 15px;
+}
+
+/*-----------------------------------------------------Student menu--------------------------------------------------*/
+.menu_bar_wrap_student {
+    float: left;
+    width: 100%;
+    margin: 2px 0 10px 0;
+    z-index: 16;
+    /*background: #005CA7;*/
+    background: #111;
+    border-bottom: 1px solid #111;
+}
+
+.menu_bar_student {
+    width: 1000px;
+    margin: 0 auto 0 auto;
+    z-index: 16;
+    /*background: #005CA7;*/
+    background: #111;
+    font-size: 13px;
+}
+
+/*-----------------------------------------------------Convenor menu--------------------------------------------------*/
+.menu_bar_wrap_convenor {
+    float: left;
+    width: 100%;
+    margin: 2px 0 10px 0;
+    z-index: 16;
+    background: #208f21;
+    border-bottom: 1px solid #111;
+}
+
+.menu_bar_convenor {
+    width: 1000px;
+    margin: 0 auto 0 auto;
+    z-index: 16;
+    background: #208f21;
+    font-size: 13px;
+}
+
+.little_box_Con {
+    float: left;
+    margin: 0 0 10px 10px;
+    border: 1px solid #ccc;
+    background: #f0f8ff url('../images/pnlCon.jpg') repeat-x top;
+    width: 240px;
+    width: 238px;
+    height: 390px;
+}

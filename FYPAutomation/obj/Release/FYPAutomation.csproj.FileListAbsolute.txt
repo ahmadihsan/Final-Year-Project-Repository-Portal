@@ -1,0 +1,16 @@
+G:\FYPWork\FYPAutomation\FYPAutomation\bin\FYPAutomation.dll
+G:\FYPWork\FYPAutomation\FYPAutomation\bin\FYPAutomation.pdb
+G:\FYPWork\FYPAutomation\FYPAutomation\bin\FYPDAL.dll
+G:\FYPWork\FYPAutomation\FYPAutomation\bin\FYPUtilities.dll
+G:\FYPWork\FYPAutomation\FYPAutomation\bin\MenuControl.dll
+G:\FYPWork\FYPAutomation\FYPAutomation\bin\Excel.dll
+G:\FYPWork\FYPAutomation\FYPAutomation\bin\ICSharpCode.SharpZipLib.dll
+G:\FYPWork\FYPAutomation\FYPAutomation\bin\FYPDAL.pdb
+G:\FYPWork\FYPAutomation\FYPAutomation\bin\FYPUtilities.pdb
+G:\FYPWork\FYPAutomation\FYPAutomation\bin\MenuControl.pdb
+G:\FYPWork\FYPAutomation\FYPAutomation\obj\Release\FYPAutomation.csprojResolveAssemblyReference.cache
+G:\FYPWork\FYPAutomation\FYPAutomation\obj\Release\FYPAutomation.dll
+G:\FYPWork\FYPAutomation\FYPAutomation\obj\Release\FYPAutomation.pdb
+G:\FYPWork\FYPAutomation\FYPAutomation\obj\Release\RdlCompile.cache
+G:\FYPWork\FYPAutomation\FYPAutomation\obj\Release\RdlCompile.compiled
+G:\FYPWork\FYPAutomation\FYPAutomation\bin\FYPAutomation.dll.config

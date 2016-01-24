@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FYPModelStoreContainer" CdmEntityContainer="FYPEntities">
+    <FunctionImportMapping FunctionImportName="USPAuthenticateUser" FunctionName="FYPModel.Store.USPAuthenticateUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.AuthenticateUser">
+          <ScalarProperty Name="UId" ColumnName="UId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Rid" ColumnName="Rid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="PGId" ColumnName="PGId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USPGetProjectMembers" FunctionName="FYPModel.Store.USPGetProjectMembers" />
+    <FunctionImportMapping FunctionImportName="SP_StudentProjectNotAssigned" FunctionName="FYPModel.Store.SP_StudentProjectNotAssigned">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.StudentsProjectNotAssigned">
+          <ScalarProperty Name="UId" ColumnName="UId" />
+          <ScalarProperty Name="Cgpa" ColumnName="Cgpa" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="ProjectSessionId" ColumnName="ProjectSessionId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetProjectStudents" FunctionName="FYPModel.Store.SP_GetProjectStudents" />
+    <FunctionImportMapping FunctionImportName="SP_ProjectAssignment" FunctionName="FYPModel.Store.SP_ProjectAssignment" />
+    <FunctionImportMapping FunctionImportName="SP_ProjectUnAssignment" FunctionName="FYPModel.Store.SP_ProjectUnAssignment" />
+    <FunctionImportMapping FunctionImportName="SP_CheckMileStoneSubmission" FunctionName="FYPModel.Store.SP_CheckMileStoneSubmission" />
+    <FunctionImportMapping FunctionImportName="SP_GetCustodianOfDocument" FunctionName="FYPModel.Store.SP_GetCustodianOfDocument" />
+    <FunctionImportMapping FunctionImportName="SP_SubmitDocumentByStudent" FunctionName="FYPModel.Store.SP_SubmitDocumentByStudent" />
+    <FunctionImportMapping FunctionImportName="SP_GetDocumentsSubmittedDataForGrid" FunctionName="FYPModel.Store.SP_GetDocumentsSubmittedDataForGrid">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetDocumentsSubmittedData">
+          <ScalarProperty Name="UId" ColumnName="UId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="InCustody" ColumnName="InCustody" />
+          <ScalarProperty Name="UMSId" ColumnName="UMSId" />
+          <ScalarProperty Name="UMSDId" ColumnName="UMSDId" />
+          <ScalarProperty Name="MileStoneName" ColumnName="MileStoneName" />
+          <ScalarProperty Name="UploadedFile" ColumnName="UploadedFile" />
+          <ScalarProperty Name="FromPc" ColumnName="FromPc" />
+          <ScalarProperty Name="FromStudent" ColumnName="FromStudent" />
+          <ScalarProperty Name="ReadStatus" ColumnName="ReadStatus" />
+          <ScalarProperty Name="ToAdmin" ColumnName="ToAdmin" />
+          <ScalarProperty Name="CustodianDate" ColumnName="CustodianDate" />
+          <ScalarProperty Name="StatusComment" ColumnName="StatusComment" />
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+          <ScalarProperty Name="EvalStatus" ColumnName="EvalStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetProjectStudentsWithReg" FunctionName="FYPModel.Store.SP_GetProjectStudentsWithReg">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetProjectStudentsWithReg_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetDataForGridStudent" FunctionName="FYPModel.Store.SP_GetDataForGridStudent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetDataForGridStudent_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UMSId" ColumnName="UMSId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="UMSDId" ColumnName="UMSDId" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="InCustody" ColumnName="InCustody" />
+          <ScalarProperty Name="UploadedFile" ColumnName="UploadedFile" />
+          <ScalarProperty Name="ReadStatus" ColumnName="ReadStatus" />
+          <ScalarProperty Name="EvalStatus" ColumnName="EvalStatus" />
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetProjectStudentsWithId" FunctionName="FYPModel.Store.SP_GetProjectStudentsWithId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetProjectStudentsWithId_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UId" ColumnName="UId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SubmitDocumentByPcMemberAfterCheck" FunctionName="FYPModel.Store.SP_SubmitDocumentByPcMemberAfterCheck" />
+    <FunctionImportMapping FunctionImportName="SP_GetRouteHistoryOfDocs" FunctionName="FYPModel.Store.SP_GetRouteHistoryOfDocs">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetRouteHistoryOfDocs_Result">
+          <ScalarProperty Name="UId" ColumnName="UId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="InCustody" ColumnName="InCustody" />
+          <ScalarProperty Name="UMSId" ColumnName="UMSId" />
+          <ScalarProperty Name="UMSDId" ColumnName="UMSDId" />
+          <ScalarProperty Name="MileStoneName" ColumnName="MileStoneName" />
+          <ScalarProperty Name="UploadedFile" ColumnName="UploadedFile" />
+          <ScalarProperty Name="FromPc" ColumnName="FromPc" />
+          <ScalarProperty Name="FromStudent" ColumnName="FromStudent" />
+          <ScalarProperty Name="ReadStatus" ColumnName="ReadStatus" />
+          <ScalarProperty Name="ToAdmin" ColumnName="ToAdmin" />
+          <ScalarProperty Name="CustodianDate" ColumnName="CustodianDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetCustodianOfDocumentHistory" FunctionName="FYPModel.Store.SP_GetCustodianOfDocumentHistory" />
+    <FunctionImportMapping FunctionImportName="SP_DistributeDocsToStudent" FunctionName="FYPModel.Store.SP_DistributeDocsToStudent" />
+    <FunctionImportMapping FunctionImportName="SP_DistributeDocsToPCMembers" FunctionName="FYPModel.Store.SP_DistributeDocsToPCMembers" />
+    <EntitySetMapping Name="Announcments">
+      <EntityTypeMapping TypeName="FYPModel.Announcment">
+        <MappingFragment StoreEntitySet="Announcments">
+          <ScalarProperty Name="IsVisibleToBothSessions" ColumnName="IsVisibleToBothSessions" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Upload" ColumnName="Upload" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="PSId" ColumnName="PSId" />
+          <ScalarProperty Name="AnnId" ColumnName="AnnId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="FYPModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DId" ColumnName="DId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Designations">
+      <EntityTypeMapping TypeName="FYPModel.Designation">
+        <MappingFragment StoreEntitySet="Designations">
+          <ScalarProperty Name="Designation1" ColumnName="Designation" />
+          <ScalarProperty Name="DId" ColumnName="DId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="FYPModel.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="ExtGroupID" ColumnName="ExtGroupID" />
+          <ScalarProperty Name="researchGroupId" ColumnName="researchGroupId" />
+          <ScalarProperty Name="SpecialCharactersRequired" ColumnName="SpecialCharactersRequired" />
+          <ScalarProperty Name="RequiredToolsAndTech" ColumnName="RequiredToolsAndTech" />
+          <ScalarProperty Name="Domain" ColumnName="Domain" />
+          <ScalarProperty Name="EffortsRequired" ColumnName="EffortsRequired" />
+          <ScalarProperty Name="Complexity" ColumnName="Complexity" />
+          <ScalarProperty Name="KeyFeatures" ColumnName="KeyFeatures" />
+          <ScalarProperty Name="ProposedBy" ColumnName="ProposedBy" />
+          <ScalarProperty Name="ProjectSessionId" ColumnName="ProjectSessionId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UploadedDate" ColumnName="UploadedDate" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="UploadedFile" ColumnName="UploadedFile" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+          <ScalarProperty Name="PId" ColumnName="PId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectGroups">
+      <EntityTypeMapping TypeName="FYPModel.ProjectGroup">
+        <MappingFragment StoreEntitySet="ProjectGroup">
+          <ScalarProperty Name="ExtGroupID" ColumnName="ExtGroupID" />
+          <ScalarProperty Name="StudentID5" ColumnName="StudentID5" />
+          <ScalarProperty Name="StudentID4" ColumnName="StudentID4" />
+          <ScalarProperty Name="StudentID3" ColumnName="StudentID3" />
+          <ScalarProperty Name="StudentID2" ColumnName="StudentID2" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="PGId" ColumnName="PGId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectMileStones">
+      <EntityTypeMapping TypeName="FYPModel.ProjectMileStone">
+        <MappingFragment StoreEntitySet="ProjectMileStone">
+          <ScalarProperty Name="MileStoneMarks" ColumnName="MileStoneMarks" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectMileStoneDeadLines">
+      <EntityTypeMapping TypeName="FYPModel.ProjectMileStoneDeadLine">
+        <MappingFragment StoreEntitySet="ProjectMileStoneDeadLines">
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PSId" ColumnName="PSId" />
+          <ScalarProperty Name="DeadLine" ColumnName="DeadLine" />
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+          <ScalarProperty Name="PMSDId" ColumnName="PMSDId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectSessions">
+      <EntityTypeMapping TypeName="FYPModel.ProjectSession">
+        <MappingFragment StoreEntitySet="ProjectSession">
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PSId" ColumnName="PSId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResearchGroups">
+      <EntityTypeMapping TypeName="FYPModel.ResearchGroup">
+        <MappingFragment StoreEntitySet="ResearchGroup">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ResearchId" ColumnName="ResearchId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="FYPModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rid" ColumnName="Rid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TemplateDocuments">
+      <EntityTypeMapping TypeName="FYPModel.TemplateDocument">
+        <MappingFragment StoreEntitySet="TemplateDocument">
+          <ScalarProperty Name="PSId" ColumnName="PSId" />
+          <ScalarProperty Name="UploadedDate" ColumnName="UploadedDate" />
+          <ScalarProperty Name="UploadedFile" ColumnName="UploadedFile" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TDId" ColumnName="TDId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UploadedMileStones">
+      <EntityTypeMapping TypeName="FYPModel.UploadedMileStone">
+        <MappingFragment StoreEntitySet="UploadedMileStone">
+          <ScalarProperty Name="CommentBySupervisor" ColumnName="CommentBySupervisor" />
+          <ScalarProperty Name="SupervisorId" ColumnName="SupervisorId" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="UploadedFile" ColumnName="UploadedFile" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+          <ScalarProperty Name="UMSId" ColumnName="UMSId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UploadedMileStoneDocs">
+      <EntityTypeMapping TypeName="FYPModel.UploadedMileStoneDoc">
+        <MappingFragment StoreEntitySet="UploadedMileStoneDocs">
+          <ScalarProperty Name="CustodyHistory" ColumnName="CustodyHistory" />
+          <ScalarProperty Name="EvalStatus" ColumnName="EvalStatus" />
+          <ScalarProperty Name="StatusComment" ColumnName="StatusComment" />
+          <ScalarProperty Name="ForwardedTo" ColumnName="ForwardedTo" />
+          <ScalarProperty Name="ReadStatus" ColumnName="ReadStatus" />
+          <ScalarProperty Name="FromStudent" ColumnName="FromStudent" />
+          <ScalarProperty Name="FromPC" ColumnName="FromPC" />
+          <ScalarProperty Name="ToAdmin" ColumnName="ToAdmin" />
+          <ScalarProperty Name="UMSId" ColumnName="UMSId" />
+          <ScalarProperty Name="StatusDate" ColumnName="StatusDate" />
+          <ScalarProperty Name="CustodianDate" ColumnName="CustodianDate" />
+          <ScalarProperty Name="InCustody" ColumnName="InCustody" />
+          <ScalarProperty Name="UMSDId" ColumnName="UMSDId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UploadedMileStoneDocsVersions">
+      <EntityTypeMapping TypeName="FYPModel.UploadedMileStoneDocsVersion">
+        <MappingFragment StoreEntitySet="UploadedMileStoneDocsVersions">
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="UploadedDate" ColumnName="UploadedDate" />
+          <ScalarProperty Name="UploadedFile" ColumnName="UploadedFile" />
+          <ScalarProperty Name="UMSId" ColumnName="UMSId" />
+          <ScalarProperty Name="UMSDVId" ColumnName="UMSDVId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetDocDetailSubmittedBy" FunctionName="FYPModel.Store.SP_GetDocDetailSubmittedBy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetDocDetailSubmittedBy_Result">
+          <ScalarProperty Name="UId" ColumnName="UId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="StatusComment" ColumnName="StatusComment" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="InCustody" ColumnName="InCustody" />
+          <ScalarProperty Name="UMSId" ColumnName="UMSId" />
+          <ScalarProperty Name="UMSDId" ColumnName="UMSDId" />
+          <ScalarProperty Name="UploadedFile" ColumnName="UploadedFile" />
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+          <ScalarProperty Name="MileStoneName" ColumnName="MileStoneName" />
+          <ScalarProperty Name="CustodianDate" ColumnName="CustodianDate" />
+          <ScalarProperty Name="FromPc" ColumnName="FromPc" />
+          <ScalarProperty Name="FromStudent" ColumnName="FromStudent" />
+          <ScalarProperty Name="ReadStatus" ColumnName="ReadStatus" />
+          <ScalarProperty Name="EvalStatus" ColumnName="EvalStatus" />
+          <ScalarProperty Name="ToAdmin" ColumnName="ToAdmin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="SupervisodBies">
+      <EntityTypeMapping TypeName="FYPModel.SupervisodBy">
+        <MappingFragment StoreEntitySet="SupervisodBy">
+          <ScalarProperty Name="SupervisodBy1" ColumnName="SupervisodBy" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="SId" ColumnName="SId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WeeklyMeetings">
+      <EntityTypeMapping TypeName="FYPModel.WeeklyMeeting">
+        <MappingFragment StoreEntitySet="WeeklyMeetings">
+          <ScalarProperty Name="CommentBySupervisor" ColumnName="CommentBySupervisor" />
+          <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="MId" ColumnName="MId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_DistributeDocsToSupervisor" FunctionName="FYPModel.Store.SP_DistributeDocsToSupervisor" />
+    <FunctionImportMapping FunctionImportName="SP_GetCommentsByPcMembers" FunctionName="FYPModel.Store.SP_GetCommentsByPcMembers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetCommentsByPcMembers_Result">
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="CommentedBy" ColumnName="CommentedBy" />
+          <ScalarProperty Name="CommentByPC" ColumnName="CommentByPC" />
+          <ScalarProperty Name="CommentByHead" ColumnName="CommentByHead" />
+          <ScalarProperty Name="CommentedByPCHead" ColumnName="CommentedByPCHead" />
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetDataForGridSupervisor" FunctionName="FYPModel.Store.SP_GetDataForGridSupervisor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetDataForGridSupervisor_Result">
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UMSId" ColumnName="UMSId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="UMSDId" ColumnName="UMSDId" />
+          <ScalarProperty Name="UploadedFile" ColumnName="UploadedFile" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="EvalStatus" ColumnName="EvalStatus" />
+          <ScalarProperty Name="InCustody" ColumnName="InCustody" />
+          <ScalarProperty Name="ReadStatus" ColumnName="ReadStatus" />
+          <ScalarProperty Name="PSId" ColumnName="PSId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SubmitCommentByPCHead" FunctionName="FYPModel.Store.SP_SubmitCommentByPCHead" />
+    <FunctionImportMapping FunctionImportName="SP_MakeCommentsVisibleToStudent" FunctionName="FYPModel.Store.SP_MakeCommentsVisibleToStudent" />
+    <FunctionImportMapping FunctionImportName="SP_AssignedDocsToPC" FunctionName="FYPModel.Store.SP_AssignedDocsToPC">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_AssignedDocsToPC_Result">
+          <ScalarProperty Name="UMSDId" ColumnName="UMSDId" />
+          <ScalarProperty Name="UMSId" ColumnName="UMSId" />
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+          <ScalarProperty Name="DocName" ColumnName="DocName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="PresentationSchedules">
+      <EntityTypeMapping TypeName="FYPModel.PresentationSchedule">
+        <MappingFragment StoreEntitySet="PresentationSchedule">
+          <ScalarProperty Name="Evaluator3" ColumnName="Evaluator3" />
+          <ScalarProperty Name="Evaluator2" ColumnName="Evaluator2" />
+          <ScalarProperty Name="Evaluator1" ColumnName="Evaluator1" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+          <ScalarProperty Name="PSId" ColumnName="PSId" />
+          <ScalarProperty Name="PresentationDate" ColumnName="PresentationDate" />
+          <ScalarProperty Name="TimeTo" ColumnName="TimeTo" />
+          <ScalarProperty Name="TimeFrom" ColumnName="TimeFrom" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="PRSCId" ColumnName="PRSCId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScheduleFacultyStudents">
+      <EntityTypeMapping TypeName="FYPModel.ScheduleFacultyStudent">
+        <MappingFragment StoreEntitySet="ScheduleFacultyStudent">
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="TSId" ColumnName="TSId" />
+          <ScalarProperty Name="isFaculty" ColumnName="isFaculty" />
+          <ScalarProperty Name="isStudent" ColumnName="isStudent" />
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeSlots">
+      <EntityTypeMapping TypeName="FYPModel.TimeSlot">
+        <MappingFragment StoreEntitySet="TimeSlots">
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TSId" ColumnName="TSId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_CheckWeeklyScheduleOfFacultyAndStudent" FunctionName="FYPModel.Store.SP_CheckWeeklyScheduleOfFacultyAndStudent" />
+    <EntitySetMapping Name="RoomsForPresentations">
+      <EntityTypeMapping TypeName="FYPModel.RoomsForPresentation">
+        <MappingFragment StoreEntitySet="RoomsForPresentation">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetRecordsForPresentation" FunctionName="FYPModel.Store.SP_GetRecordsForPresentation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetRecordsForPresentation_Result">
+          <ScalarProperty Name="PId" ColumnName="PId" />
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UploadedFile" ColumnName="UploadedFile" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="UploadedDate" ColumnName="UploadedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="ProjectSessionId" ColumnName="ProjectSessionId" />
+          <ScalarProperty Name="ProposedBy" ColumnName="ProposedBy" />
+          <ScalarProperty Name="KeyFeatures" ColumnName="KeyFeatures" />
+          <ScalarProperty Name="Complexity" ColumnName="Complexity" />
+          <ScalarProperty Name="EffortsRequired" ColumnName="EffortsRequired" />
+          <ScalarProperty Name="Domain" ColumnName="Domain" />
+          <ScalarProperty Name="RequiredToolsAndTech" ColumnName="RequiredToolsAndTech" />
+          <ScalarProperty Name="SpecialCharactersRequired" ColumnName="SpecialCharactersRequired" />
+          <ScalarProperty Name="researchGroupId" ColumnName="researchGroupId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CheckConflictPresentationTimings" FunctionName="FYPModel.Store.SP_CheckConflictPresentationTimings" />
+    <FunctionImportMapping FunctionImportName="SP_GetPresentationSchedule" FunctionName="FYPModel.Store.SP_GetPresentationSchedule">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetPresentationSchedule_Result">
+          <ScalarProperty Name="PId" ColumnName="PId" />
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+          <ScalarProperty Name="TimeFrom" ColumnName="TimeFrom" />
+          <ScalarProperty Name="TimeTo" ColumnName="TimeTo" />
+          <ScalarProperty Name="PRSCId" ColumnName="PRSCId" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="PresentationDate" ColumnName="PresentationDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetFreeSlotsDayBased" FunctionName="FYPModel.Store.SP_GetFreeSlotsDayBased">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetFreeSlotsDayBased_Result">
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="isStudent" ColumnName="isStudent" />
+          <ScalarProperty Name="isFaculty" ColumnName="isFaculty" />
+          <ScalarProperty Name="TSId" ColumnName="TSId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FreeSlot" ColumnName="FreeSlot" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetMatchingFreeTime" FunctionName="FYPModel.Store.SP_GetMatchingFreeTime">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetMatchingFreeTime_Result">
+          <ScalarProperty Name="MatchingCount" ColumnName="MatchingCount" />
+          <ScalarProperty Name="TSId" ColumnName="TSId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="FreeTime" ColumnName="FreeTime" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetPresentationsToStudent" FunctionName="FYPModel.Store.SP_GetPresentationsToStudent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetPresentationsToStudent_Result">
+          <ScalarProperty Name="PRSCId" ColumnName="PRSCId" />
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+          <ScalarProperty Name="TimeFrom" ColumnName="TimeFrom" />
+          <ScalarProperty Name="TimeTo" ColumnName="TimeTo" />
+          <ScalarProperty Name="PresentationDate" ColumnName="PresentationDate" />
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+          <ScalarProperty Name="PSId" ColumnName="PSId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetPresentationsToIndividualUser" FunctionName="FYPModel.Store.SP_GetPresentationsToIndividualUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetPresentationsToIndividualUser_Result">
+          <ScalarProperty Name="PRSCId" ColumnName="PRSCId" />
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="sss" ColumnName="sss" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="TimeFrom" ColumnName="TimeFrom" />
+          <ScalarProperty Name="TimeTo" ColumnName="TimeTo" />
+          <ScalarProperty Name="PresentationDate" ColumnName="PresentationDate" />
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+          <ScalarProperty Name="PSId" ColumnName="PSId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DeleteDocumentFromUMDoc" FunctionName="FYPModel.Store.SP_DeleteDocumentFromUMDoc" />
+    <FunctionImportMapping FunctionImportName="SP_DocSubmissionStatus" FunctionName="FYPModel.Store.SP_DocSubmissionStatus" />
+    <FunctionImportMapping FunctionImportName="SP_GetProjectDetailForReport" FunctionName="FYPModel.Store.SP_GetProjectDetailForReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetProjectDetailForReport_Result">
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="supervisorname" ColumnName="supervisorname" />
+          <ScalarProperty Name="ResearchTitle" ColumnName="ResearchTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetProjectStudentsForReport" FunctionName="FYPModel.Store.SP_GetProjectStudentsForReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetProjectStudentsForReport_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetSubmittedMileStonesList" FunctionName="FYPModel.Store.SP_GetSubmittedMileStonesList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetSubmittedMileStonesList_Result">
+          <ScalarProperty Name="Milestone" ColumnName="Milestone" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="CommentBySupervisor" ColumnName="CommentBySupervisor" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetUploadedDocsCommentsByPCForReport" FunctionName="FYPModel.Store.SP_GetUploadedDocsCommentsByPCForReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetUploadedDocsCommentsByPCForReport_Result">
+          <ScalarProperty Name="MileStoneName" ColumnName="MileStoneName" />
+          <ScalarProperty Name="StatusComment" ColumnName="StatusComment" />
+          <ScalarProperty Name="EvalStatus" ColumnName="EvalStatus" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetWeeklyMeetingDetailsForReport" FunctionName="FYPModel.Store.SP_GetWeeklyMeetingDetailsForReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetWeeklyMeetingDetailsForReport_Result">
+          <ScalarProperty Name="MId" ColumnName="MId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+          <ScalarProperty Name="CommentBySupervisor" ColumnName="CommentBySupervisor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ProjectDirectories">
+      <EntityTypeMapping TypeName="FYPModel.ProjectDirectory">
+        <MappingFragment StoreEntitySet="ProjectDirectory">
+          <ScalarProperty Name="psId" ColumnName="psId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UploadedFile" ColumnName="UploadedFile" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="PDId" ColumnName="PDId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_DeleteDocumentFromUMDoc1" FunctionName="FYPModel.Store.SP_DeleteDocumentFromUMDoc1" />
+    <EntitySetMapping Name="Communications">
+      <EntityTypeMapping TypeName="FYPModel.Communication">
+        <MappingFragment StoreEntitySet="Communication">
+          <ScalarProperty Name="File_Attached" ColumnName="File_Attached" />
+          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+          <ScalarProperty Name="Replied" ColumnName="Replied" />
+          <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="ReadStatus" ColumnName="ReadStatus" />
+          <ScalarProperty Name="Message_Content" ColumnName="Message_Content" />
+          <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+          <ScalarProperty Name="Message_To" ColumnName="Message_To" />
+          <ScalarProperty Name="Message_From" ColumnName="Message_From" />
+          <ScalarProperty Name="COMId" ColumnName="COMId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_DeleteEmailFromCommunication" FunctionName="FYPModel.Store.SP_DeleteEmailFromCommunication" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteEmailFromCom" FunctionName="FYPModel.Store.SP_DeleteEmailFromCommunication" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteEmailFromCommunication1" FunctionName="FYPModel.Store.SP_DeleteEmailFromCommunication" />
+    <FunctionImportMapping FunctionImportName="SP_Communication" FunctionName="FYPModel.Store.SP_Communication" />
+    <EntitySetMapping Name="AssignExternalProjects">
+      <EntityTypeMapping TypeName="FYPModel.AssignExternalProject">
+        <MappingFragment StoreEntitySet="AssignExternalProject">
+          <ScalarProperty Name="ProjectSessionId" ColumnName="ProjectSessionId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ExtGroupID" ColumnName="ExtGroupID" />
+          <ScalarProperty Name="AssignexternalProjectId" ColumnName="AssignexternalProjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Func_GetExternalsNameAgainstProjectID" FunctionName="FYPModel.Store.Func_GetExternalsNameAgainstProjectID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.Func_GetExternalsNameAgainstProjectID_Result">
+          <ScalarProperty Name="Ex1" ColumnName="Ex1" />
+          <ScalarProperty Name="Ex2" ColumnName="Ex2" />
+          <ScalarProperty Name="Ex3" ColumnName="Ex3" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="FYPModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="IsGrouped" ColumnName="IsGrouped" />
+          <ScalarProperty Name="E_Office" ColumnName="E_Office" />
+          <ScalarProperty Name="E_ContactAddresss" ColumnName="E_ContactAddresss" />
+          <ScalarProperty Name="E_CNIC" ColumnName="E_CNIC" />
+          <ScalarProperty Name="E_Specialization" ColumnName="E_Specialization" />
+          <ScalarProperty Name="EntityRecordID" ColumnName="EntityRecordID" />
+          <ScalarProperty Name="ProjectSessionId" ColumnName="ProjectSessionId" />
+          <ScalarProperty Name="UploadImage" ColumnName="UploadImage" />
+          <ScalarProperty Name="ResearchId" ColumnName="ResearchId" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Cgpa" ColumnName="Cgpa" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="CiitExtension" ColumnName="CiitExtension" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UId" ColumnName="UId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_CreatGroupOfExternal" FunctionName="FYPModel.Store.SP_CreatGroupOfExternal" />
+    <FunctionImportMapping FunctionImportName="SP_UpdateUserWithIsGroupedValue" FunctionName="FYPModel.Store.SP_UpdateUserWithIsGroupedValue" />
+    <FunctionImportMapping FunctionImportName="SP_GetNamesOfExternalGroupMember" FunctionName="FYPModel.Store.SP_GetNamesOfExternalGroupMember">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetNamesOfExternalGroupMember_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UId" ColumnName="UId" />
+          <ScalarProperty Name="EGId" ColumnName="EGId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ExternalGroups">
+      <EntityTypeMapping TypeName="FYPModel.ExternalGroup">
+        <MappingFragment StoreEntitySet="ExternalGroup">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ProjectSessionId" ColumnName="ProjectSessionId" />
+          <ScalarProperty Name="Ext_user3" ColumnName="Ext_user3" />
+          <ScalarProperty Name="Ext_User2" ColumnName="Ext_User2" />
+          <ScalarProperty Name="Ext_User1" ColumnName="Ext_User1" />
+          <ScalarProperty Name="EGId" ColumnName="EGId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_RemoveExtGroupByFirstUserId" FunctionName="FYPModel.Store.SP_RemoveExtGroupByFirstUserId" />
+    <FunctionImportMapping FunctionImportName="SP_ChangeIsGroupedbyId" FunctionName="FYPModel.Store.SP_ChangeIsGroupedbyId" />
+    <EntitySetMapping Name="MileStoneEvaluations">
+      <EntityTypeMapping TypeName="FYPModel.MileStoneEvaluation">
+        <MappingFragment StoreEntitySet="MileStoneEvaluation">
+          <ScalarProperty Name="ObtainMarks" ColumnName="ObtainMarks" />
+          <ScalarProperty Name="EvaluationStatus" ColumnName="EvaluationStatus" />
+          <ScalarProperty Name="CommentBySupervisor" ColumnName="CommentBySupervisor" />
+          <ScalarProperty Name="CommentByExternal" ColumnName="CommentByExternal" />
+          <ScalarProperty Name="PSId" ColumnName="PSId" />
+          <ScalarProperty Name="IsVisibletToStudent" ColumnName="IsVisibletToStudent" />
+          <ScalarProperty Name="CommentByPcAboutProject" ColumnName="CommentByPcAboutProject" />
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+          <ScalarProperty Name="ComentedDate" ColumnName="ComentedDate" />
+          <ScalarProperty Name="CommentedByPCHead" ColumnName="CommentedByPCHead" />
+          <ScalarProperty Name="CommentByHead" ColumnName="CommentByHead" />
+          <ScalarProperty Name="CommentedBy" ColumnName="CommentedBy" />
+          <ScalarProperty Name="CommentByPC" ColumnName="CommentByPC" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="MSEId" ColumnName="MSEId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SubmitDocByStudent" FunctionName="FYPModel.Store.SP_SubmitDocByStudent" />
+    <FunctionImportMapping FunctionImportName="SP_CheckMileStoneEvaluation" FunctionName="FYPModel.Store.SP_CheckMileStoneEvaluation" />
+    <FunctionImportMapping FunctionImportName="SP_SetEvalStatus" FunctionName="FYPModel.Store.SP_SetEvalStatus" />
+    <FunctionImportMapping FunctionImportName="SP_UpdateEvaluationRemarks" FunctionName="FYPModel.Store.SP_UpdateEvaluationRemarks" />
+    <FunctionImportMapping FunctionImportName="SP_GetAssignedDocumentsForGrid" FunctionName="FYPModel.Store.SP_GetAssignedDocumentsForGrid">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FYPModel.SP_GetAssignedDocumentsForGrid_Result">
+          <ScalarProperty Name="UId" ColumnName="UId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Tiltle" ColumnName="Tiltle" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="StatusComment" ColumnName="StatusComment" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="InCustody" ColumnName="InCustody" />
+          <ScalarProperty Name="UMSId" ColumnName="UMSId" />
+          <ScalarProperty Name="UMSDId" ColumnName="UMSDId" />
+          <ScalarProperty Name="UploadedFile" ColumnName="UploadedFile" />
+          <ScalarProperty Name="PMSId" ColumnName="PMSId" />
+          <ScalarProperty Name="MileStoneName" ColumnName="MileStoneName" />
+          <ScalarProperty Name="CustodianDate" ColumnName="CustodianDate" />
+          <ScalarProperty Name="FromPc" ColumnName="FromPc" />
+          <ScalarProperty Name="FromStudent" ColumnName="FromStudent" />
+          <ScalarProperty Name="ReadStatus" ColumnName="ReadStatus" />
+          <ScalarProperty Name="EvalStatus" ColumnName="EvalStatus" />
+          <ScalarProperty Name="ToAdmin" ColumnName="ToAdmin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

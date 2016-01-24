@@ -1,0 +1,255 @@
+﻿.MessageDiv {
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.Failure {
+    color: red;
+}
+
+.Success {
+    color: green;
+}
+
+.Failure, .Success {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    background-color: azure;
+}
+
+.paginationClass span {
+    font-weight: bolder !important;
+    /*border: 2px solid rgb(36, 99, 190);*/
+}
+
+.paginationClass table tbody tr td {
+    border: 1px solid gray;
+}
+
+.paginationClass > td {
+    border: 0 !important;
+}
+
+/*
+    Below is the CSS for Dash Board
+    */
+/* Starts*/
+div.DashIcon {
+    text-align: center;
+    margin-right: 15px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+    div.DashIcon span {
+        display: block;
+        text-align: center;
+    }
+
+    div.DashIcon img {
+        padding: 10px 0;
+        margin: 0 auto;
+        border: 0;
+        height: auto;
+        width: auto;
+    }
+
+    div.DashIcon a {
+        background-color: #FFF;
+        background-position: -30px;
+        display: block;
+        float: left;
+        height: 97px;
+        width: 108px;
+        color: #565656;
+        vertical-align: middle;
+        text-decoration: none;
+        border: 1px solid #CCC;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-transition-property: background-position, -webkit-border-bottom-left-radius, -webkit-box-shadow;
+        -o-transition-property: background-position, -webkit-border-bottom-left-radius, -webkit-box-shadow;
+        -moz-transition-property: background-position, -moz-border-radius-bottomleft, -moz-box-shadow;
+        -webkit-transition-duration: 0.8s;
+        -moz-transition-duration: 0.8s;
+        transition-duration: 0.8s;
+        transition-property: background-position, -webkit-border-bottom-left-radius, -webkit-box-shadow;
+    }
+
+        div.DashIcon a:hover {
+            background-position: 0;
+            -webkit-border-bottom-left-radius: 50% 20px;
+            -moz-border-radius-bottomleft: 50% 20px;
+            border-bottom-left-radius: 50% 20px;
+            -webkit-box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.25);
+            -moz-box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.25);
+            box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.25);
+            position: relative;
+            z-index: 10;
+        }
+/* End*/
+
+
+/*=========================== button css*/
+.mybtn_add {
+    background-image: url('../Images/DashBoardImages/add.png');
+    background-repeat: no-repeat;
+    background-color: white;
+    width: 32px !important;
+    height: 32px;
+    border: none;
+}
+
+.mybtn_remove {
+    background-image: url('../Images/DashBoardImages/delete.png');
+    background-repeat: no-repeat;
+    background-color: white;
+    width: 32px !important;
+    height: 32px;
+    border: none;
+}
+
+.mybtn_next {
+    background-image: url('../Images/DashBoardImages/next.png');
+    background-repeat: no-repeat;
+    background-color: white;
+    width: 32px !important;
+    height: 32px;
+    border: none;
+}
+
+.mybtn_prev {
+    background-image: url('../Images/DashBoardImages/previous.png');
+    background-repeat: no-repeat;
+    background-color: white;
+    width: 32px !important;
+    height: 32px;
+    border: none;
+}
+
+.mybtn_Search {
+    background-image: url('../Images/DashBoardImages/search.png');
+    background-repeat: no-repeat;
+    background-color: white;
+    width: 32px !important;
+    height: 30px;
+    border: none;
+}
+
+.ButtonNavigations {
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+}
+
+    .ButtonNavigations input, .ButtonNavigations select {
+        margin: 0;
+    }
+
+    .ButtonNavigations span {
+        display: block;
+        height: 20px;
+    }
+
+.ui-dialog {
+    z-index: 9999 !important;
+    top: 40% !important;
+    left: 40% !important;
+    position: fixed !important;
+}
+
+.ProgressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: black;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+    z-index: 999999;
+}
+
+    .ProgressBar img {
+        position: absolute;
+        height: auto !important;
+        width: auto !important;
+        left: 47%;
+        top: 47%;
+    }
+
+.gridWithNoBorder td {
+    border: none !important;
+}
+
+ul.uliExtender {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style-type: none !important;
+}
+
+    ul.uliExtender li {
+    }
+
+
+.ckEditorSettingWindow {
+    width: 900px;
+    margin-left: -441px;
+}
+
+/**
+ *    Real-World CSS
+ *    by @visualidiot. Licensed under WTPFL.
+ */
+ 
+/* @group Blink */
+
+.blink {
+    -webkit-animation: blink .75s linear infinite;
+    -moz-animation: blink .75s linear infinite;
+    -ms-animation: blink .75s linear infinite;
+    -o-animation: blink .75s linear infinite;
+    animation: blink .75s linear infinite;
+}
+
+@-webkit-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-moz-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-ms-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-o-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* @end */

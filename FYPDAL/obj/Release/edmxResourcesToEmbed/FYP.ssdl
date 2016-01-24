@@ -1,0 +1,1163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FYPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Announcments">
+    <Key>
+      <PropertyRef Name="AnnId" />
+    </Key>
+    <Property Name="AnnId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PSId" Type="bigint" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Title" Type="varchar" MaxLength="500" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="Upload" Type="varchar" MaxLength="500" />
+    <Property Name="IsVisibleToBothSessions" Type="bit" />
+  </EntityType>
+  <EntityType Name="Communication">
+    <Key>
+      <PropertyRef Name="COMId" />
+    </Key>
+    <Property Name="COMId" Type="bigint" Nullable="false" />
+    <Property Name="MessageFrom" Type="bigint" />
+    <Property Name="MessageTo" Type="bigint" />
+    <Property Name="Title" Type="varchar" MaxLength="500" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="ReadStatus" Type="bit" />
+    <Property Name="ParentId" Type="bigint" />
+    <Property Name="ReceivedDate" Type="datetime" />
+    <Property Name="Replied" Type="bit" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DId" />
+    </Key>
+    <Property Name="DId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Designations">
+    <Key>
+      <PropertyRef Name="DId" />
+    </Key>
+    <Property Name="DId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MileStoneEvaluation">
+    <Key>
+      <PropertyRef Name="MSEId" />
+    </Key>
+    <Property Name="MSEId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" Nullable="false" />
+    <Property Name="StudentId" Type="bigint" Nullable="false" />
+    <Property Name="CommentByPC" Type="varchar(max)" />
+    <Property Name="CommentedBy" Type="bigint" />
+    <Property Name="CommentByHead" Type="varchar(max)" />
+    <Property Name="CommentedByPCHead" Type="bigint" />
+    <Property Name="ComentedDate" Type="datetime" />
+    <Property Name="PMSId" Type="bigint" Nullable="false" />
+    <Property Name="CommentByPcAboutProject" Type="varchar(max)" />
+    <Property Name="IsVisibletToStudent" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PresentationSchedule">
+    <Key>
+      <PropertyRef Name="PRSCId" />
+    </Key>
+    <Property Name="PRSCId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="TimeFrom" Type="time" Precision="7" />
+    <Property Name="TimeTo" Type="time" Precision="7" />
+    <Property Name="PresentationDate" Type="datetime" />
+    <Property Name="PSId" Type="bigint" />
+    <Property Name="PMSId" Type="bigint" />
+    <Property Name="RoomNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="PId" />
+    </Key>
+    <Property Name="PId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tiltle" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+    <Property Name="UploadedFile" Type="varchar" MaxLength="250" />
+    <Property Name="UploadedBy" Type="bigint" Nullable="false" />
+    <Property Name="UploadedDate" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="smallint" Nullable="false" />
+    <Property Name="StudentId" Type="bigint" />
+    <Property Name="ProjectSessionId" Type="bigint" Nullable="false" />
+    <Property Name="ProposedBy" Type="bigint" />
+    <Property Name="KeyFeatures" Type="varchar(max)" Nullable="false" />
+    <Property Name="Complexity" Type="smallint" />
+    <Property Name="EffortsRequired" Type="varchar(max)" Nullable="false" />
+    <Property Name="Domain" Type="varchar(max)" Nullable="false" />
+    <Property Name="RequiredToolsAndTech" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="SpecialCharactersRequired" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="researchGroupId" Type="int" />
+  </EntityType>
+  <EntityType Name="ProjectDirectory">
+    <Key>
+      <PropertyRef Name="PDId" />
+    </Key>
+    <Property Name="PDId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="UploadedFile" Type="varchar(max)" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="psId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ProjectGroup">
+    <Key>
+      <PropertyRef Name="PGId" />
+    </Key>
+    <Property Name="PGId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentId" Type="bigint" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectMileStone">
+    <Key>
+      <PropertyRef Name="PMSId" />
+    </Key>
+    <Property Name="PMSId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectMileStoneDeadLines">
+    <Key>
+      <PropertyRef Name="PMSDId" />
+    </Key>
+    <Property Name="PMSDId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PMSId" Type="bigint" Nullable="false" />
+    <Property Name="DeadLine" Type="datetime" Nullable="false" />
+    <Property Name="PSId" Type="bigint" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+    <Property Name="TimeSpan" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectSession">
+    <Key>
+      <PropertyRef Name="PSId" />
+    </Key>
+    <Property Name="PSId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="2500" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Year" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ResearchGroup">
+    <Key>
+      <PropertyRef Name="ResearchId" />
+    </Key>
+    <Property Name="ResearchId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Rid" />
+    </Key>
+    <Property Name="Rid" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RoomsForPresentation">
+    <Key>
+      <PropertyRef Name="RoomId" />
+    </Key>
+    <Property Name="RoomId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ScheduleFacultyStudent">
+    <Key>
+      <PropertyRef Name="ScheduleId" />
+    </Key>
+    <Property Name="ScheduleId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="isStudent" Type="bit" />
+    <Property Name="isFaculty" Type="bit" />
+    <Property Name="TSId" Type="int" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="Day" Type="varchar" MaxLength="50" />
+    <Property Name="UserId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="SupervisodBy">
+    <Key>
+      <PropertyRef Name="SId" />
+    </Key>
+    <Property Name="SId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="SupervisodBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TemplateDocument">
+    <Key>
+      <PropertyRef Name="TDId" />
+    </Key>
+    <Property Name="TDId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="UploadedFile" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="UploadedDate" Type="datetime" Nullable="false" />
+    <Property Name="PSId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="TimeSlots">
+    <Key>
+      <PropertyRef Name="TSId" />
+    </Key>
+    <Property Name="TSId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="150" />
+    <Property Name="StartTime" Type="varchar" MaxLength="50" />
+    <Property Name="EndTime" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UploadedMileStone">
+    <Key>
+      <PropertyRef Name="UMSId" />
+    </Key>
+    <Property Name="UMSId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PMSId" Type="bigint" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" Nullable="false" />
+    <Property Name="SubmittedDate" Type="datetime" Nullable="false" />
+    <Property Name="SupervisorId" Type="bigint" Nullable="false" />
+    <Property Name="UploadedFile" Type="varchar" MaxLength="500" />
+    <Property Name="UploadedBy" Type="bigint" />
+    <Property Name="CommentBySupervisor" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="UploadedMileStoneDocs">
+    <Key>
+      <PropertyRef Name="UMSDId" />
+    </Key>
+    <Property Name="UMSDId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InCustody" Type="bigint" />
+    <Property Name="CustodianDate" Type="datetime" Nullable="false" />
+    <Property Name="StatusComment" Type="varchar(max)" />
+    <Property Name="StatusDate" Type="datetime" />
+    <Property Name="UMSId" Type="bigint" />
+    <Property Name="ToAdmin" Type="bit" />
+    <Property Name="FromPC" Type="bit" />
+    <Property Name="FromStudent" Type="bit" />
+    <Property Name="ReadStatus" Type="bit" />
+    <Property Name="ForwardedTo" Type="bigint" />
+    <Property Name="EvalStatus" Type="bit" />
+  </EntityType>
+  <EntityType Name="UploadedMileStoneDocsVersions">
+    <Key>
+      <PropertyRef Name="UMSDVId" />
+    </Key>
+    <Property Name="UMSDVId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UMSId" Type="bigint" />
+    <Property Name="UploadedFile" Type="varchar" MaxLength="500" />
+    <Property Name="UploadedDate" Type="datetime" />
+    <Property Name="UploadedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UId" />
+    </Key>
+    <Property Name="UId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CiitExtension" Type="varchar" MaxLength="50" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="50" />
+    <Property Name="RoleId" Type="smallint" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="RegistrationNo" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="Cgpa" Type="float" />
+    <Property Name="Semester" Type="int" />
+    <Property Name="ResearchId" Type="int" />
+    <Property Name="UploadImage" Type="varchar" MaxLength="250" />
+    <Property Name="ProjectSessionId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="WeeklyMeetings">
+    <Key>
+      <PropertyRef Name="MId" />
+    </Key>
+    <Property Name="MId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="Title" Type="varchar" MaxLength="590" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="MeetingDate" Type="datetime" />
+    <Property Name="CommentBySupervisor" Type="varchar(max)" />
+  </EntityType>
+  <Association Name="FK_Announcments_ProjectSession">
+    <End Role="ProjectSession" Type="Self.ProjectSession" Multiplicity="0..1" />
+    <End Role="Announcments" Type="Self.Announcments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="Announcments">
+        <PropertyRef Name="PSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Announcments_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Announcments" Type="Self.Announcments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="Announcments">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Communication_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Communication" Type="Self.Communication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="Communication">
+        <PropertyRef Name="MessageFrom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Communication_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Communication" Type="Self.Communication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="Communication">
+        <PropertyRef Name="MessageTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MileStoneEvaluation_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="MileStoneEvaluation" Type="Self.MileStoneEvaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="MileStoneEvaluation">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MileStoneEvaluation_ProjectMileStone">
+    <End Role="ProjectMileStone" Type="Self.ProjectMileStone" Multiplicity="1" />
+    <End Role="MileStoneEvaluation" Type="Self.MileStoneEvaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectMileStone">
+        <PropertyRef Name="PMSId" />
+      </Principal>
+      <Dependent Role="MileStoneEvaluation">
+        <PropertyRef Name="PMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MileStoneEvaluation_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="MileStoneEvaluation" Type="Self.MileStoneEvaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="MileStoneEvaluation">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MileStoneEvaluation_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MileStoneEvaluation" Type="Self.MileStoneEvaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="MileStoneEvaluation">
+        <PropertyRef Name="CommentedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MileStoneEvaluation_User2">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MileStoneEvaluation" Type="Self.MileStoneEvaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="MileStoneEvaluation">
+        <PropertyRef Name="CommentedByPCHead" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PresentationSchedule_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="PresentationSchedule" Type="Self.PresentationSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="PresentationSchedule">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PresentationSchedule_ProjectMileStone">
+    <End Role="ProjectMileStone" Type="Self.ProjectMileStone" Multiplicity="0..1" />
+    <End Role="PresentationSchedule" Type="Self.PresentationSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectMileStone">
+        <PropertyRef Name="PMSId" />
+      </Principal>
+      <Dependent Role="PresentationSchedule">
+        <PropertyRef Name="PMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PresentationSchedule_ProjectSession">
+    <End Role="ProjectSession" Type="Self.ProjectSession" Multiplicity="0..1" />
+    <End Role="PresentationSchedule" Type="Self.PresentationSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="PresentationSchedule">
+        <PropertyRef Name="PSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PresentationSchedule_RoomsForPresentation">
+    <End Role="RoomsForPresentation" Type="Self.RoomsForPresentation" Multiplicity="0..1" />
+    <End Role="PresentationSchedule" Type="Self.PresentationSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomsForPresentation">
+        <PropertyRef Name="RoomId" />
+      </Principal>
+      <Dependent Role="PresentationSchedule">
+        <PropertyRef Name="RoomNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_ProjectSession">
+    <End Role="ProjectSession" Type="Self.ProjectSession" Multiplicity="1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="ProjectSessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_ResearchGroup">
+    <End Role="ResearchGroup" Type="Self.ResearchGroup" Multiplicity="0..1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResearchGroup">
+        <PropertyRef Name="ResearchId" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="researchGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="ProposedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDirectory_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="ProjectDirectory" Type="Self.ProjectDirectory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="ProjectDirectory">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDirectory_ProjectSession1">
+    <End Role="ProjectSession" Type="Self.ProjectSession" Multiplicity="0..1" />
+    <End Role="ProjectDirectory" Type="Self.ProjectDirectory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="ProjectDirectory">
+        <PropertyRef Name="psId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectGroup_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="ProjectGroup" Type="Self.ProjectGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="ProjectGroup">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectGroup_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="ProjectGroup" Type="Self.ProjectGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="ProjectGroup">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectMileStoneDeadLines_ProjectMileStone">
+    <End Role="ProjectMileStone" Type="Self.ProjectMileStone" Multiplicity="1" />
+    <End Role="ProjectMileStoneDeadLines" Type="Self.ProjectMileStoneDeadLines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectMileStone">
+        <PropertyRef Name="PMSId" />
+      </Principal>
+      <Dependent Role="ProjectMileStoneDeadLines">
+        <PropertyRef Name="PMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectMileStoneDeadLines_ProjectSession">
+    <End Role="ProjectSession" Type="Self.ProjectSession" Multiplicity="1" />
+    <End Role="ProjectMileStoneDeadLines" Type="Self.ProjectMileStoneDeadLines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="ProjectMileStoneDeadLines">
+        <PropertyRef Name="PSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Role_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Role" Type="Self.Role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="Role">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduleFacultyStudent_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="ScheduleFacultyStudent" Type="Self.ScheduleFacultyStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="ScheduleFacultyStudent">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduleFacultyStudent_TimeSlots">
+    <End Role="TimeSlots" Type="Self.TimeSlots" Multiplicity="0..1" />
+    <End Role="ScheduleFacultyStudent" Type="Self.ScheduleFacultyStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TimeSlots">
+        <PropertyRef Name="TSId" />
+      </Principal>
+      <Dependent Role="ScheduleFacultyStudent">
+        <PropertyRef Name="TSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduleFacultyStudent_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="ScheduleFacultyStudent" Type="Self.ScheduleFacultyStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="ScheduleFacultyStudent">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SupervisodBy_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="SupervisodBy" Type="Self.SupervisodBy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="SupervisodBy">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SupervisodBy_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SupervisodBy" Type="Self.SupervisodBy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="SupervisodBy">
+        <PropertyRef Name="SupervisodBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateDocument_ProjectSession">
+    <End Role="ProjectSession" Type="Self.ProjectSession" Multiplicity="0..1" />
+    <End Role="TemplateDocument" Type="Self.TemplateDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="TemplateDocument">
+        <PropertyRef Name="PSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStone_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="UploadedMileStone" Type="Self.UploadedMileStone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="UploadedMileStone">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStone_ProjectMileStone">
+    <End Role="ProjectMileStone" Type="Self.ProjectMileStone" Multiplicity="1" />
+    <End Role="UploadedMileStone" Type="Self.UploadedMileStone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectMileStone">
+        <PropertyRef Name="PMSId" />
+      </Principal>
+      <Dependent Role="UploadedMileStone">
+        <PropertyRef Name="PMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStone_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="UploadedMileStone" Type="Self.UploadedMileStone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="UploadedMileStone">
+        <PropertyRef Name="UploadedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStoneDocs_UploadedMileStone">
+    <End Role="UploadedMileStone" Type="Self.UploadedMileStone" Multiplicity="0..1" />
+    <End Role="UploadedMileStoneDocs" Type="Self.UploadedMileStoneDocs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UploadedMileStone">
+        <PropertyRef Name="UMSId" />
+      </Principal>
+      <Dependent Role="UploadedMileStoneDocs">
+        <PropertyRef Name="UMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStoneDocs_UploadedMileStone1">
+    <End Role="UploadedMileStone" Type="Self.UploadedMileStone" Multiplicity="0..1" />
+    <End Role="UploadedMileStoneDocs" Type="Self.UploadedMileStoneDocs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UploadedMileStone">
+        <PropertyRef Name="UMSId" />
+      </Principal>
+      <Dependent Role="UploadedMileStoneDocs">
+        <PropertyRef Name="UMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStoneDocs_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="UploadedMileStoneDocs" Type="Self.UploadedMileStoneDocs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="UploadedMileStoneDocs">
+        <PropertyRef Name="InCustody" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStoneDocsVersions_UploadedMileStone">
+    <End Role="UploadedMileStone" Type="Self.UploadedMileStone" Multiplicity="0..1" />
+    <End Role="UploadedMileStoneDocsVersions" Type="Self.UploadedMileStoneDocsVersions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UploadedMileStone">
+        <PropertyRef Name="UMSId" />
+      </Principal>
+      <Dependent Role="UploadedMileStoneDocsVersions">
+        <PropertyRef Name="UMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_ProjectSession">
+    <End Role="ProjectSession" Type="Self.ProjectSession" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="ProjectSessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_ResearchGroup">
+    <End Role="ResearchGroup" Type="Self.ResearchGroup" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResearchGroup">
+        <PropertyRef Name="ResearchId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="ResearchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Rid" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WeeklyMeetings_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="WeeklyMeetings" Type="Self.WeeklyMeetings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="WeeklyMeetings">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_AssignedDocsToPC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SessionId" Type="bigint" Mode="In" />
+    <Parameter Name="MileStoneId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_CheckConflictPresentationTimings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="presentationDate" Type="datetime" Mode="In" />
+    <Parameter Name="psid" Type="bigint" Mode="In" />
+    <Parameter Name="pmsid" Type="bigint" Mode="In" />
+    <Parameter Name="isExist" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="SP_CheckMileStoneSubmission" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProjectId" Type="bigint" Mode="In" />
+    <Parameter Name="PMSId" Type="bigint" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="SP_CheckWeeklyScheduleOfFacultyAndStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProjectId" Type="bigint" Mode="In" />
+    <Parameter Name="Day" Type="varchar" Mode="In" />
+    <Parameter Name="UserId" Type="bigint" Mode="In" />
+    <Parameter Name="CheckExitance" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="SP_DeleteDocumentFromUMDoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="umsid" Type="bigint" Mode="In" />
+    <Parameter Name="checkBit" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="SP_DistributeDocsToPCMembers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="umsid" Type="bigint" Mode="In" />
+    <Parameter Name="loggedUserId" Type="bigint" Mode="In" />
+    <Parameter Name="userId" Type="bigint" Mode="In" />
+    <Parameter Name="umsdid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_DistributeDocsToStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="umsid" Type="bigint" Mode="In" />
+    <Parameter Name="loggedUserId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_DistributeDocsToSupervisor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="umsid" Type="bigint" Mode="In" />
+    <Parameter Name="loggedUserId" Type="bigint" Mode="In" />
+    <Parameter Name="umsdid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_DocSubmissionStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projectId" Type="bigint" Mode="In" />
+    <Parameter Name="scope" Type="bit" Mode="InOut" />
+    <Parameter Name="srs" Type="bit" Mode="InOut" />
+    <Parameter Name="sds" Type="bit" Mode="InOut" />
+    <Parameter Name="rpt" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="SP_GetCommentsByPcMembers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projId" Type="bigint" Mode="In" />
+    <Parameter Name="pmsId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetCustodianOfDocument" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UMSDId" Type="bigint" Mode="In" />
+    <Parameter Name="ProjectId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetCustodianOfDocumentHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustodianId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetDataForGridStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="uId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetDataForGridSupervisor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="uId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetDocDetailSubmittedBy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="umsdid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetDocumentsSubmittedDataForGrid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SessionId" Type="bigint" Mode="In" />
+    <Parameter Name="MileStoneId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetFreeSlotsDayBased" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="bigint" Mode="In" />
+    <Parameter Name="day" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_GetMatchingFreeTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projectId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetPresentationSchedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="psid" Type="bigint" Mode="In" />
+    <Parameter Name="pmsid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetPresentationsToIndividualUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="psid" Type="bigint" Mode="In" />
+    <Parameter Name="userId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetPresentationsToStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="psid" Type="bigint" Mode="In" />
+    <Parameter Name="pmsid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetProjectDetailForReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetProjectStudents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetProjectStudentsForReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetProjectStudentsWithId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetProjectStudentsWithReg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetRecordsForPresentation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="psid" Type="bigint" Mode="In" />
+    <Parameter Name="pmsid" Type="bigint" Mode="In" />
+    <Parameter Name="number" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_GetRouteHistoryOfDocs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="umsid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetSubmittedMileStonesList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProjectId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetUploadedDocsCommentsByPCForReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_GetWeeklyMeetingDetailsForReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_MakeCommentsVisibleToStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="psid" Type="bigint" Mode="In" />
+    <Parameter Name="pmsid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_ProjectAssignment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UId" Type="bigint" Mode="In" />
+    <Parameter Name="ProjectId" Type="bigint" Mode="In" />
+    <Parameter Name="TransactionStatus" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="SP_ProjectUnAssignment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProjectId" Type="bigint" Mode="In" />
+    <Parameter Name="TransactionStatus" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="SP_StudentProjectNotAssigned" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoleId" Type="int" Mode="In" />
+    <Parameter Name="SessionId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_SubmitCommentByPCHead" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pid" Type="bigint" Mode="In" />
+    <Parameter Name="uId" Type="bigint" Mode="In" />
+    <Parameter Name="pmsid" Type="bigint" Mode="In" />
+    <Parameter Name="commentByPcHead" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="SP_SubmitDocumentByPcMemberAfterCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UMSId" Type="bigint" Mode="In" />
+    <Parameter Name="uploadedFilePath" Type="varchar" Mode="In" />
+    <Parameter Name="StatusOfDoc" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Umsdid" Type="bigint" Mode="In" />
+    <Parameter Name="UserId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_SubmitDocumentByStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mileStoneId" Type="int" Mode="In" />
+    <Parameter Name="projectId" Type="bigint" Mode="In" />
+    <Parameter Name="SupervisodBy" Type="bigint" Mode="In" />
+    <Parameter Name="uploadedFilePath" Type="varchar" Mode="In" />
+    <Parameter Name="Comment" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="USPAuthenticateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Pwd" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="USPGetProjectMembers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProjectId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_DeleteDocumentFromUMDoc1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ziaulhaq" StoreFunctionName="SP_DeleteDocumentFromUMDoc">
+    <Parameter Name="umsid" Type="bigint" Mode="In" />
+    <Parameter Name="checkBit" Type="bit" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="FYPModelStoreContainer">
+    <EntitySet Name="Announcments" EntityType="Self.Announcments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Communication" EntityType="Self.Communication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Designations" EntityType="Self.Designations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MileStoneEvaluation" EntityType="Self.MileStoneEvaluation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PresentationSchedule" EntityType="Self.PresentationSchedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectDirectory" EntityType="Self.ProjectDirectory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectGroup" EntityType="Self.ProjectGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectMileStone" EntityType="Self.ProjectMileStone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectMileStoneDeadLines" EntityType="Self.ProjectMileStoneDeadLines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectSession" EntityType="Self.ProjectSession" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResearchGroup" EntityType="Self.ResearchGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomsForPresentation" EntityType="Self.RoomsForPresentation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ScheduleFacultyStudent" EntityType="Self.ScheduleFacultyStudent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SupervisodBy" EntityType="Self.SupervisodBy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TemplateDocument" EntityType="Self.TemplateDocument" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TimeSlots" EntityType="Self.TimeSlots" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UploadedMileStone" EntityType="Self.UploadedMileStone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UploadedMileStoneDocs" EntityType="Self.UploadedMileStoneDocs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UploadedMileStoneDocsVersions" EntityType="Self.UploadedMileStoneDocsVersions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WeeklyMeetings" EntityType="Self.WeeklyMeetings" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Announcments_ProjectSession" Association="Self.FK_Announcments_ProjectSession">
+      <End Role="ProjectSession" EntitySet="ProjectSession" />
+      <End Role="Announcments" EntitySet="Announcments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Announcments_User" Association="Self.FK_Announcments_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Announcments" EntitySet="Announcments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Communication_User" Association="Self.FK_Communication_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Communication" EntitySet="Communication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Communication_User1" Association="Self.FK_Communication_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Communication" EntitySet="Communication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MileStoneEvaluation_Project" Association="Self.FK_MileStoneEvaluation_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="MileStoneEvaluation" EntitySet="MileStoneEvaluation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MileStoneEvaluation_ProjectMileStone" Association="Self.FK_MileStoneEvaluation_ProjectMileStone">
+      <End Role="ProjectMileStone" EntitySet="ProjectMileStone" />
+      <End Role="MileStoneEvaluation" EntitySet="MileStoneEvaluation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MileStoneEvaluation_User" Association="Self.FK_MileStoneEvaluation_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="MileStoneEvaluation" EntitySet="MileStoneEvaluation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MileStoneEvaluation_User1" Association="Self.FK_MileStoneEvaluation_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="MileStoneEvaluation" EntitySet="MileStoneEvaluation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MileStoneEvaluation_User2" Association="Self.FK_MileStoneEvaluation_User2">
+      <End Role="User" EntitySet="User" />
+      <End Role="MileStoneEvaluation" EntitySet="MileStoneEvaluation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PresentationSchedule_Project" Association="Self.FK_PresentationSchedule_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="PresentationSchedule" EntitySet="PresentationSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PresentationSchedule_ProjectMileStone" Association="Self.FK_PresentationSchedule_ProjectMileStone">
+      <End Role="ProjectMileStone" EntitySet="ProjectMileStone" />
+      <End Role="PresentationSchedule" EntitySet="PresentationSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PresentationSchedule_ProjectSession" Association="Self.FK_PresentationSchedule_ProjectSession">
+      <End Role="ProjectSession" EntitySet="ProjectSession" />
+      <End Role="PresentationSchedule" EntitySet="PresentationSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PresentationSchedule_RoomsForPresentation" Association="Self.FK_PresentationSchedule_RoomsForPresentation">
+      <End Role="RoomsForPresentation" EntitySet="RoomsForPresentation" />
+      <End Role="PresentationSchedule" EntitySet="PresentationSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_ProjectSession" Association="Self.FK_Project_ProjectSession">
+      <End Role="ProjectSession" EntitySet="ProjectSession" />
+      <End Role="Project" EntitySet="Project" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_ResearchGroup" Association="Self.FK_Project_ResearchGroup">
+      <End Role="ResearchGroup" EntitySet="ResearchGroup" />
+      <End Role="Project" EntitySet="Project" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_User" Association="Self.FK_Project_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Project" EntitySet="Project" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_User1" Association="Self.FK_Project_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Project" EntitySet="Project" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDirectory_Project" Association="Self.FK_ProjectDirectory_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="ProjectDirectory" EntitySet="ProjectDirectory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDirectory_ProjectSession1" Association="Self.FK_ProjectDirectory_ProjectSession1">
+      <End Role="ProjectSession" EntitySet="ProjectSession" />
+      <End Role="ProjectDirectory" EntitySet="ProjectDirectory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectGroup_Project" Association="Self.FK_ProjectGroup_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="ProjectGroup" EntitySet="ProjectGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectGroup_User" Association="Self.FK_ProjectGroup_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="ProjectGroup" EntitySet="ProjectGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectMileStoneDeadLines_ProjectMileStone" Association="Self.FK_ProjectMileStoneDeadLines_ProjectMileStone">
+      <End Role="ProjectMileStone" EntitySet="ProjectMileStone" />
+      <End Role="ProjectMileStoneDeadLines" EntitySet="ProjectMileStoneDeadLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectMileStoneDeadLines_ProjectSession" Association="Self.FK_ProjectMileStoneDeadLines_ProjectSession">
+      <End Role="ProjectSession" EntitySet="ProjectSession" />
+      <End Role="ProjectMileStoneDeadLines" EntitySet="ProjectMileStoneDeadLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Role_User" Association="Self.FK_Role_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Role" EntitySet="Role" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduleFacultyStudent_Project" Association="Self.FK_ScheduleFacultyStudent_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="ScheduleFacultyStudent" EntitySet="ScheduleFacultyStudent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduleFacultyStudent_TimeSlots" Association="Self.FK_ScheduleFacultyStudent_TimeSlots">
+      <End Role="TimeSlots" EntitySet="TimeSlots" />
+      <End Role="ScheduleFacultyStudent" EntitySet="ScheduleFacultyStudent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduleFacultyStudent_User" Association="Self.FK_ScheduleFacultyStudent_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="ScheduleFacultyStudent" EntitySet="ScheduleFacultyStudent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SupervisodBy_Project" Association="Self.FK_SupervisodBy_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="SupervisodBy" EntitySet="SupervisodBy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SupervisodBy_User" Association="Self.FK_SupervisodBy_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="SupervisodBy" EntitySet="SupervisodBy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateDocument_ProjectSession" Association="Self.FK_TemplateDocument_ProjectSession">
+      <End Role="ProjectSession" EntitySet="ProjectSession" />
+      <End Role="TemplateDocument" EntitySet="TemplateDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStone_Project" Association="Self.FK_UploadedMileStone_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="UploadedMileStone" EntitySet="UploadedMileStone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStone_ProjectMileStone" Association="Self.FK_UploadedMileStone_ProjectMileStone">
+      <End Role="ProjectMileStone" EntitySet="ProjectMileStone" />
+      <End Role="UploadedMileStone" EntitySet="UploadedMileStone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStone_User" Association="Self.FK_UploadedMileStone_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UploadedMileStone" EntitySet="UploadedMileStone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStoneDocs_UploadedMileStone" Association="Self.FK_UploadedMileStoneDocs_UploadedMileStone">
+      <End Role="UploadedMileStone" EntitySet="UploadedMileStone" />
+      <End Role="UploadedMileStoneDocs" EntitySet="UploadedMileStoneDocs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStoneDocs_UploadedMileStone1" Association="Self.FK_UploadedMileStoneDocs_UploadedMileStone1">
+      <End Role="UploadedMileStone" EntitySet="UploadedMileStone" />
+      <End Role="UploadedMileStoneDocs" EntitySet="UploadedMileStoneDocs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStoneDocs_User" Association="Self.FK_UploadedMileStoneDocs_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UploadedMileStoneDocs" EntitySet="UploadedMileStoneDocs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStoneDocsVersions_UploadedMileStone" Association="Self.FK_UploadedMileStoneDocsVersions_UploadedMileStone">
+      <End Role="UploadedMileStone" EntitySet="UploadedMileStone" />
+      <End Role="UploadedMileStoneDocsVersions" EntitySet="UploadedMileStoneDocsVersions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Department" Association="Self.FK_User_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_ProjectSession" Association="Self.FK_User_ProjectSession">
+      <End Role="ProjectSession" EntitySet="ProjectSession" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_ResearchGroup" Association="Self.FK_User_ResearchGroup">
+      <End Role="ResearchGroup" EntitySet="ResearchGroup" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WeeklyMeetings_Project" Association="Self.FK_WeeklyMeetings_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="WeeklyMeetings" EntitySet="WeeklyMeetings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

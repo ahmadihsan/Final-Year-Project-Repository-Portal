@@ -1,0 +1,8 @@
+G:\FYPWork\FYPAutomation\FYPUtilities\bin\Release\FYPUtilities.dll.config
+G:\FYPWork\FYPAutomation\FYPUtilities\bin\Release\FYPUtilities.dll
+G:\FYPWork\FYPAutomation\FYPUtilities\bin\Release\FYPUtilities.pdb
+G:\FYPWork\FYPAutomation\FYPUtilities\bin\Release\Excel.dll
+G:\FYPWork\FYPAutomation\FYPUtilities\bin\Release\ICSharpCode.SharpZipLib.dll
+G:\FYPWork\FYPAutomation\FYPUtilities\obj\Release\FYPUtilities.csprojResolveAssemblyReference.cache
+G:\FYPWork\FYPAutomation\FYPUtilities\obj\Release\FYPUtilities.dll
+G:\FYPWork\FYPAutomation\FYPUtilities\obj\Release\FYPUtilities.pdb

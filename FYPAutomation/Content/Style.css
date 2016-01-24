@@ -1,0 +1,174 @@
+﻿@font-face
+{
+font-family: myHeadingFont;
+src: url('fonts/Delphin Regular.ttf')
+}
+.arrow-left {
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
+	
+	border-right:10px solid blue; 
+}
+.Red {
+    color: #ff0081;
+}
+.Blue {
+    color: #3e8cba;
+}
+.title {
+    font-size: 24px;
+    font-family: myHeadingFont;
+}
+.TransparentBackground {
+    background-color: transparent;
+    border: 0 transparent;
+}
+.NavBackground {
+    background-color: #268bc3;
+    background-image: none;
+    border: 1px #268bc3 solid;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#268bc3', endColorstr='#268bc3', GradientType=0);
+    border-radius: 5px;
+}
+ul.nav li a {
+    color: white !important;
+    -webkit-text-shadow: none;
+    text-shadow: none;
+}
+ul.nav li a:hover {
+    color: white !important;
+    -webkit-text-shadow: none;
+    text-shadow: none;
+    background-color: #7ba61b !important;
+}
+ul.nav li a.active {
+    color: white !important;
+    -webkit-text-shadow: none;
+    text-shadow: none;
+    background-color: #97cc24 !important;
+}
+ul.nav li.Single {
+  padding: 10px 2px 10px;
+}
+ul.fontSmall {
+    margin-right: 20px !important;
+}
+ul.fontSmall li, ul.fontSmall li a {
+    font-size: 10px;
+    font-weight: normal;
+    -webkit-text-shadow: none !important ;
+    text-shadow: none !important ;
+ }
+ul.fontSmall li a {
+    padding: 10px 5px 10px !important;
+}
+ul.fontSmall li a img {
+    display: inline !important;
+    margin-left: 2px;
+}
+.greenbackground,.greenbackground:hover {
+    background-color: #95ca22 !important;
+    background-image: none;
+}
+.whiteColor, .whiteColor:hover {
+    color: white;
+}
+.Featuredheader {
+    height: 322px;
+    padding: 0;
+    position: relative;
+}
+.whitebackground {
+    background-color: #ffffff;
+}
+.leftArticle {
+  background-color: #eeeeee;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eeeeee), to(#ffffff));
+  background: -webkit-linear-gradient(top, #ffffff, #eeeeee);
+  background: -moz-linear-gradient(top, #ffffff, #eeeeee);
+  background: -ms-linear-gradient(top, #ffffff, #eeeeee);
+  background: -o-linear-gradient(top, #ffffff, #eeeeee);
+ 
+}
+.contentArticle {
+    background-color: #f7f7f7;
+}
+.paddingtwentyTop {
+    padding-top: 30px;
+}
+.marginZero {
+    margin: 0;
+}
+.paddingZero {
+    padding: 0;
+}
+.LargeFont {
+    font-size: 18px;
+}
+.CategoryLists li{
+    height: 30px;
+    font-size: 13px;
+    color:#232323;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid #dadada;
+}
+.commontitle {
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid #dadada;
+}
+.marginTopTwenty {
+    margin-top: 20px;
+}
+.marginBottomTwenty {
+    margin-bottom: 20px;
+}
+.paddingRightTwenty {
+    padding-left: 40px;
+}
+.ShopNow,.ShopNow:hover {
+    background: #90cf0f url(../images/Arrow.png) 90% 50% no-repeat !important;
+    padding-right: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.marginOfTen {
+    margin: 10px;
+}
+.clearall {
+    clear: both;
+}
+.HeaderDiv {
+    position: relative; height: 111px; background-image: url(../Images/officialImages/ciit_header6.jpg); background-repeat:     no-repeat;
+}
+html,html > body {
+    height: 100%;
+}
+fieldset ul {
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 0;
+    padding: 0;
+}
+fieldset ul li.well {
+    padding: 0;
+    margin: 0;
+    line-height: 20px;
+    vertical-align: middle;
+    padding-left: 5px;
+}
+@media (max-width: 767px) {
+
+   .paddingRightTwenty {
+       padding: 0;
+}
+   .ShopNow,.ShopNow:hover {
+       background: #90cf0f;
+    /*padding-right: 40px;
+    margin-top: 20px;*/
+}
+}

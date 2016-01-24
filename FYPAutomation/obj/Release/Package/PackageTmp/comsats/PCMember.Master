@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PCMember.master.cs" Inherits="FYPAutomation.comsats.PCMember" %>
+
+
+<%@ Import Namespace="FYPUtilities" %>
+
+
+<%@ Register Src="~/comsats/UserControls/CtrlFooter.ascx" TagPrefix="uc1" TagName="CtrlFooter" %>
+<%@ Register Src="~/UserControls/General/CtrlScripts.ascx" TagPrefix="uc1" TagName="CtrlScripts" %>
+<%@ Register Src="~/comsats/UserControls/CtrlHeaderForPCM.ascx" TagPrefix="uc1" TagName="CtrlHeaderForPCM" %>
+
+
+
+<%--<%@ Register Src="~/comsats/UserControls/CtrlHeader.ascx" TagPrefix="uc1" TagName="CtrlHeaderForStudent" %>--%>
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>FYP Portal CIIT Islamabad</title>
+    <webopt:BundleReference ID="BundleReference4" runat="server" Path="~/Content/themes/base/css" />
+    <webopt:BundleReference ID="BundleReference1" runat="server" Path="~/Content/css" />
+    <webopt:BundleReference ID="BundleReference2" runat="server" Path="~/Content/Manager" />
+    <webopt:BundleReference ID="BundleReference3" runat="server" Path="~/comsats/NewMenuScripts/css" />
+</head>
+<body>
+ <%--   <div id="dialog" style="display: none"></div>--%>
+    <form id="form1" runat="server">
+       
+        <uc1:CtrlScripts runat="server" ID="CtrlScripts" />
+        <uc1:CtrlHeaderForPCM runat="server" id="CtrlHeaderForPCM" />
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="pull-left well-QuickLunch clearfix"  runat="server" id="dvQuickLunch">
+                    <div class="little_box">
+                        <div class="box">
+                            <div class="box-title" style="margin-bottom: 20px;">Quick Links</div>
+                            <div class="box-content">
+                                <ul class="nice-list1">
+                                    <li style="text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/pages/PCMember/default.aspx") %>">Home</a></li>
+                                    <li style="display:block;color: white;text-decoration: underline"><a href="#">Inbox</a></li>
+                                    <li style="text-decoration: underline"><a href="<%=FYPSession.IsUserLoggedIn()?VirtualPathUtility.ToAbsolute(string.Format("~/Pages/PCMember/UserProfile.aspx?UId={0}",FYPSession.GetLoggedUser().UserId)):string.Empty%>">My Profile</a></li>
+                                    <li style="text-decoration: underline"><a href="<%=  VirtualPathUtility.ToAbsolute("~/Pages/PCMember/ViewWeeklySchedule.aspx") %>">My Schedule</a></li>
+                                    <li style="text-decoration: underline"><a href="<%=  VirtualPathUtility.ToAbsolute("~/Pages/PCMember/ChangePassword.aspx") %>">Change Password</a></li>
+                                    <li style="text-decoration: underline"><a href="<%=  FYPSession.IsUserLoggedIn()? VirtualPathUtility.ToAbsolute("~/pages/login?cmd=logout"):"#" %>"><%= FYPSession.IsUserLoggedIn()?"Log out":string.Empty  %></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="little_box">
+                            <div class="box">
+                                <div class="box-title" style="margin-bottom: 20px;">Project Profile</div>
+                                <div class="box-content">
+                                    <ul class="nice-list1">
+                                        <li style="text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/pages/PCMember/ViewMyProjects.aspx") %>">My Projects</a></li>
+                                        <li style="text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/pages/PCMember/WeeklyMeetingView.aspx") %>">Weekly Meetings</a></li>
+                                        <li style="text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/pages/PCMember/MyPresentationSchedule.aspx") %>">Presentation Schedule</a></li>
+                                        <li style="text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/pages/PCMember/PCRemarks.aspx") %>">Remarks</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="span10 well clearfix" runat="server" id="dvContent" clientidmode="Static">
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Always" ChildrenAsTriggers="True">
+                        <ContentTemplate>
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+                        <ProgressTemplate>
+                            <div class="ProgressBar">
+                                <asp:Image runat="server" ID="imgProgress" ImageUrl="~/Images/updateProgress.gif" />
+                            </div>
+
+                        </ProgressTemplate>
+                    </asp:UpdateProgress>
+                </div>
+                  
+            </div>
+        </div>
+
+        <uc1:CtrlFooter runat="server" ID="CtrlFooter" />
+         
+    </form>                            
+    <script type="text/javascript">
+        function pageLoad(sender, args) {
+
+            $(".datepick").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        }
+
+        $(function () {
+            $("#dvAccordian").accordion();
+        });
+    </script>
+
+</body>
+</html>

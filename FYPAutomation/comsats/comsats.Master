@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="comsats.master.cs" Inherits="WebApplication1.comsats.comsats" %>
+<%@ Import Namespace="FYPUtilities" %>
+
+
+<%@ Register Src="~/comsats/UserControls/CtrlFooter.ascx" TagPrefix="uc1" TagName="CtrlFooter" %>
+<%@ Register Src="~/comsats/UserControls/CtrlHeader.ascx" TagPrefix="uc1" TagName="CtrlHeader" %>
+<%@ Register Src="~/UserControls/General/CtrlScripts.ascx" TagPrefix="uc1" TagName="CtrlScripts" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link  rel="shortcut icon" href="../Pages/logo_new.ico"/>
+    <title>FYP Portal CIIT Islamabad</title>
+    <webopt:BundleReference ID="BundleReference4" runat="server" Path="~/Content/themes/base/css" />
+    <webopt:BundleReference ID="BundleReference1" runat="server" Path="~/Content/css" />
+    <webopt:BundleReference ID="BundleReference2" runat="server" Path="~/Content/Manager" />
+    <webopt:BundleReference ID="BundleReference3" runat="server" Path="~/comsats/NewMenuScripts/css" />
+
+</head>
+<body style="height:100%">
+    <%--<div id="dialog" style="display: none"></div>--%>
+    <form id="form1" runat="server">
+        <uc1:CtrlScripts runat="server" ID="CtrlScripts" />
+        <uc1:CtrlHeader runat="server" ID="CtrlHeader" />
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="pull-left well-QuickLunch clearfix" runat="server" id="dvQuickLunch">
+                    <div class="little_box">
+                        <div class="box">
+                            <div class="box-title" style="margin-bottom: 20px;">Quick Links</div>
+                            <div class="box-content">
+                                <ul class="nice-list1">
+                                    <li style="text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/pages/Admin/default.aspx") %>">Home</a></li>
+                                    <li style="display:block;color: white;text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/pages/Admin/AdminMailBox.aspx") %>">MailBox</a></li>
+                                    <li style="text-decoration: underline"><a href="<%=FYPSession.IsUserLoggedIn()?VirtualPathUtility.ToAbsolute(string.Format("~/Pages/Admin/UserProfile.aspx?UId={0}",FYPSession.GetLoggedUser().UserId)):string.Empty%>">My Profile</a></li>
+                                   <li style="text-decoration: underline"><a href="<%=  VirtualPathUtility.ToAbsolute("~/Pages/Admin/ViewWeeklySchedule.aspx") %>">My Schedule</a></li>
+                                    <li style="text-decoration: underline"><a href="<%=  VirtualPathUtility.ToAbsolute("~/Pages/Admin/ChangePassword.aspx") %>">Change Password</a></li>
+                                    <li style="text-decoration: underline"><a href="<%=  FYPSession.IsUserLoggedIn()? VirtualPathUtility.ToAbsolute("~/pages/login?cmd=logout"):"#" %>"><%= FYPSession.IsUserLoggedIn()?"Log out":string.Empty  %></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="little_box">
+                            <div class="box">
+                                <div class="box-title" style="margin-bottom: 20px;">Project Profile</div>
+                                <div class="box-content">
+                                    <ul class="nice-list1">
+                                        <li style="text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/pages/Admin/MyProject.aspx") %>">My Projects</a></li>
+                                        <li style="text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/pages/Admin/ProjectArchive.aspx") %>">Projects Archive</a></li>
+                                        <li style="text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/pages/Admin/WeeklyMeetingView.aspx") %>">Weekly Meetings</a></li>
+                                        <li style="text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/pages/Admin/MyPresentationSchedule.aspx") %>">Presentation Schedule</a></li>
+                                        <li style="text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/pages/Admin/PCRemarks.aspx") %>">My Projects Remarks</a></li>
+                                        <li style="text-decoration: underline"><a href="<%= VirtualPathUtility.ToAbsolute("~/Pages/Admin/MyRemarksAdmin.aspx") %>">My Evaluation Remarks</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="span10 well clearfix" runat="server" id="dvContent" clientidmode="Static">
+                    
+                    <asp:UpdatePanel runat="server" UpdateMode="Always" EnablePartialRendering="true"  ChildrenAsTriggers="True">
+                        <ContentTemplate>
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    <asp:UpdateProgress runat="server">
+                        <ProgressTemplate>
+                            <div class="ProgressBar">
+                                <asp:Image runat="server" ID="imgProgress" ImageUrl="~/Images/updateProgress.gif" />
+                            </div>
+
+                        </ProgressTemplate>
+                    </asp:UpdateProgress>
+                </div>
+
+            </div>
+        </div>
+
+        <uc1:CtrlFooter runat="server" ID="CtrlFooter" />
+    </form>
+    <script type="text/javascript">
+        function pageLoad(sender, args) {
+
+            $(".datepick").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+            $(function () {
+                $(".timepic").timepicker('getTime'[new Date()]);
+            });
+        }
+
+        $(function () {
+            $("#dvAccordian").accordion();
+        });
+    </script>
+
+</body>
+</html>

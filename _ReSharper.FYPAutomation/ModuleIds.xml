@@ -1,0 +1,6 @@
+<Modules>
+  <Module PersistentId="ACB8CFDC-F9BF-4E28-B0F6-17AE659DB343" ModuleId="FYPDAL" />
+  <Module PersistentId="6791F7FC-20D3-489C-8E53-284664CE5FFD" ModuleId="FYPUtilities" />
+  <Module PersistentId="9C95310D-1C77-46F0-9541-C54F39C80D46" ModuleId="MenuControl" />
+  <Module PersistentId="95438380-0C41-4F83-AEBA-ECEA9B247BFB" ModuleId="FYPAutomation" />
+</Modules>

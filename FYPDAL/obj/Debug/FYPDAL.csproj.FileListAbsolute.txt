@@ -1,0 +1,80 @@
+G:\FYP\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll.config
+G:\FYP\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll
+G:\FYP\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.pdb
+G:\FYP\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.dll
+G:\FYP\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\FYP\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.xml
+G:\FYP\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.xml
+G:\FYP\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.dll
+G:\FYP\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.pdb
+G:\FYP\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.csprojResolveAssemblyReference.cache
+G:\Project\FYP\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll.config
+G:\Project\FYP\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll
+G:\Project\FYP\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.pdb
+G:\Project\FYP\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.dll
+G:\Project\FYP\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\Project\FYP\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.xml
+G:\Project\FYP\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.xml
+G:\Project\FYP\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.csprojResolveAssemblyReference.cache
+G:\Project\FYP\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.dll
+G:\Project\FYP\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.pdb
+E:\ProjectWork\Zia Project\FYPAutomation - Copy\FYPDAL\bin\Debug\FYPDAL.dll.config
+E:\ProjectWork\Zia Project\FYPAutomation - Copy\FYPDAL\bin\Debug\FYPDAL.dll
+E:\ProjectWork\Zia Project\FYPAutomation - Copy\FYPDAL\bin\Debug\FYPDAL.pdb
+E:\ProjectWork\Zia Project\FYPAutomation - Copy\FYPDAL\bin\Debug\EntityFramework.dll
+E:\ProjectWork\Zia Project\FYPAutomation - Copy\FYPDAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\ProjectWork\Zia Project\FYPAutomation - Copy\FYPDAL\bin\Debug\EntityFramework.xml
+E:\ProjectWork\Zia Project\FYPAutomation - Copy\FYPDAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\ProjectWork\Zia Project\FYPAutomation - Copy\FYPDAL\obj\Debug\FYPDAL.csprojResolveAssemblyReference.cache
+E:\ProjectWork\Zia Project\FYPAutomation - Copy\FYPDAL\obj\Debug\FYPDAL.dll
+E:\ProjectWork\Zia Project\FYPAutomation - Copy\FYPDAL\obj\Debug\FYPDAL.pdb
+G:\Project\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll.config
+G:\Project\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll
+G:\Project\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.pdb
+G:\Project\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.dll
+G:\Project\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\Project\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.xml
+G:\Project\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.xml
+G:\Project\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.dll
+G:\Project\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.pdb
+G:\Project\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.csprojResolveAssemblyReference.cache
+G:\projects\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll.config
+G:\projects\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll
+G:\projects\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.pdb
+G:\projects\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.dll
+G:\projects\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\projects\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.xml
+G:\projects\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.xml
+G:\projects\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.dll
+G:\projects\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.pdb
+G:\projects\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.csprojResolveAssemblyReference.cache
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll.config
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.pdb
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.dll
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.xml
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.xml
+G:\FYPWork\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.dll
+G:\FYPWork\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.pdb
+G:\FYPWork\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.csprojResolveAssemblyReference.cache
+E:\FYP\FYP_Repository\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll.config
+E:\FYP\FYP_Repository\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll
+E:\FYP\FYP_Repository\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.pdb
+E:\FYP\FYP_Repository\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.dll
+E:\FYP\FYP_Repository\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\FYP\FYP_Repository\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.xml
+E:\FYP\FYP_Repository\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\FYP\FYP_Repository\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.csprojResolveAssemblyReference.cache
+E:\FYP\FYP_Repository\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.dll
+E:\FYP\FYP_Repository\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.pdb
+E:\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll.config
+E:\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.dll
+E:\FYPAutomation\FYPDAL\bin\Debug\FYPDAL.pdb
+E:\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.dll
+E:\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.xml
+E:\FYPAutomation\FYPDAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.csprojResolveAssemblyReference.cache
+E:\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.dll
+E:\FYPAutomation\FYPDAL\obj\Debug\FYPDAL.pdb

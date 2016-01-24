@@ -1,0 +1,1490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FYPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="FYPEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="USPAuthenticateUser" ReturnType="Collection(FYPModel.AuthenticateUser)">
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Pwd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USPGetProjectMembers" ReturnType="Collection(Int64)">
+      <Parameter Name="ProjectId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_StudentProjectNotAssigned" ReturnType="Collection(FYPModel.StudentsProjectNotAssigned)">
+      <Parameter Name="RoleId" Mode="In" Type="Int32" />
+      <Parameter Name="SessionId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetProjectStudents" ReturnType="Collection(String)">
+      <Parameter Name="pid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ProjectAssignment">
+      <Parameter Name="UId" Mode="In" Type="Int64" />
+      <Parameter Name="ProjectId" Mode="In" Type="Int64" />
+      <Parameter Name="TransactionStatus" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ProjectUnAssignment">
+      <Parameter Name="ProjectId" Mode="In" Type="Int64" />
+      <Parameter Name="TransactionStatus" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CheckMileStoneSubmission">
+      <Parameter Name="ProjectId" Mode="In" Type="Int64" />
+      <Parameter Name="PMSId" Mode="In" Type="Int64" />
+      <Parameter Name="Status" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetCustodianOfDocument" ReturnType="Collection(String)">
+      <Parameter Name="UMSDId" Mode="In" Type="Int64" />
+      <Parameter Name="ProjectId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SubmitDocumentByStudent">
+      <Parameter Name="mileStoneId" Mode="In" Type="Int32" />
+      <Parameter Name="projectId" Mode="In" Type="Int64" />
+      <Parameter Name="SupervisodBy" Mode="In" Type="Int64" />
+      <Parameter Name="uploadedFilePath" Mode="In" Type="String" />
+      <Parameter Name="Comment" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetDocumentsSubmittedDataForGrid" ReturnType="Collection(FYPModel.SP_GetDocumentsSubmittedData)">
+      <Parameter Name="SessionId" Mode="In" Type="Int64" />
+      <Parameter Name="MileStoneId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetProjectStudentsWithReg" ReturnType="Collection(FYPModel.SP_GetProjectStudentsWithReg_Result)">
+      <Parameter Name="pid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetDataForGridStudent" ReturnType="Collection(FYPModel.SP_GetDataForGridStudent_Result)">
+      <Parameter Name="uId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetProjectStudentsWithId" ReturnType="Collection(FYPModel.SP_GetProjectStudentsWithId_Result)">
+      <Parameter Name="pid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SubmitDocumentByPcMemberAfterCheck">
+      <Parameter Name="UMSId" Mode="In" Type="Int64" />
+      <Parameter Name="uploadedFilePath" Mode="In" Type="String" />
+      <Parameter Name="StatusOfDoc" Mode="In" Type="String" />
+      <Parameter Name="Umsdid" Mode="In" Type="Int64" />
+      <Parameter Name="UserId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetRouteHistoryOfDocs" ReturnType="Collection(FYPModel.SP_GetRouteHistoryOfDocs_Result)">
+      <Parameter Name="umsid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetCustodianOfDocumentHistory" ReturnType="Collection(String)">
+      <Parameter Name="CustodianId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DistributeDocsToStudent">
+      <Parameter Name="umsid" Mode="In" Type="Int64" />
+      <Parameter Name="loggedUserId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DistributeDocsToPCMembers">
+      <Parameter Name="umsid" Mode="In" Type="Int64" />
+      <Parameter Name="loggedUserId" Mode="In" Type="Int64" />
+      <Parameter Name="userId" Mode="In" Type="Int64" />
+      <Parameter Name="umsdid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="Announcments" EntityType="FYPModel.Announcment" />
+    <EntitySet Name="Communications" EntityType="FYPModel.Communication" />
+    <EntitySet Name="Departments" EntityType="FYPModel.Department" />
+    <EntitySet Name="Designations" EntityType="FYPModel.Designation" />
+    <EntitySet Name="MileStoneEvaluations" EntityType="FYPModel.MileStoneEvaluation" />
+    <EntitySet Name="Projects" EntityType="FYPModel.Project" />
+    <EntitySet Name="ProjectGroups" EntityType="FYPModel.ProjectGroup" />
+    <EntitySet Name="ProjectMileStones" EntityType="FYPModel.ProjectMileStone" />
+    <EntitySet Name="ProjectMileStoneDeadLines" EntityType="FYPModel.ProjectMileStoneDeadLine" />
+    <EntitySet Name="ProjectSessions" EntityType="FYPModel.ProjectSession" />
+    <EntitySet Name="ResearchGroups" EntityType="FYPModel.ResearchGroup" />
+    <EntitySet Name="Roles" EntityType="FYPModel.Role" />
+    <EntitySet Name="TemplateDocuments" EntityType="FYPModel.TemplateDocument" />
+    <EntitySet Name="UploadedMileStones" EntityType="FYPModel.UploadedMileStone" />
+    <EntitySet Name="UploadedMileStoneDocs" EntityType="FYPModel.UploadedMileStoneDoc" />
+    <EntitySet Name="UploadedMileStoneDocsVersions" EntityType="FYPModel.UploadedMileStoneDocsVersion" />
+    <EntitySet Name="Users" EntityType="FYPModel.User" />
+    <AssociationSet Name="FK_Announcments_ProjectSession" Association="FYPModel.FK_Announcments_ProjectSession">
+      <End Role="ProjectSession" EntitySet="ProjectSessions" />
+      <End Role="Announcment" EntitySet="Announcments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Communication_User" Association="FYPModel.FK_Communication_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Communication" EntitySet="Communications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Communication_User1" Association="FYPModel.FK_Communication_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Communication" EntitySet="Communications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Department" Association="FYPModel.FK_User_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MileStoneEvaluation_Project" Association="FYPModel.FK_MileStoneEvaluation_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="MileStoneEvaluation" EntitySet="MileStoneEvaluations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MileStoneEvaluation_ProjectMileStone" Association="FYPModel.FK_MileStoneEvaluation_ProjectMileStone">
+      <End Role="ProjectMileStone" EntitySet="ProjectMileStones" />
+      <End Role="MileStoneEvaluation" EntitySet="MileStoneEvaluations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MileStoneEvaluation_User1" Association="FYPModel.FK_MileStoneEvaluation_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MileStoneEvaluation" EntitySet="MileStoneEvaluations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MileStoneEvaluation_User2" Association="FYPModel.FK_MileStoneEvaluation_User2">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MileStoneEvaluation" EntitySet="MileStoneEvaluations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_ProjectSession" Association="FYPModel.FK_Project_ProjectSession">
+      <End Role="ProjectSession" EntitySet="ProjectSessions" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_ResearchGroup" Association="FYPModel.FK_Project_ResearchGroup">
+      <End Role="ResearchGroup" EntitySet="ResearchGroups" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_User" Association="FYPModel.FK_Project_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_User1" Association="FYPModel.FK_Project_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectGroup_Project" Association="FYPModel.FK_ProjectGroup_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ProjectGroup" EntitySet="ProjectGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStone_Project" Association="FYPModel.FK_UploadedMileStone_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="UploadedMileStone" EntitySet="UploadedMileStones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectGroup_User" Association="FYPModel.FK_ProjectGroup_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ProjectGroup" EntitySet="ProjectGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectMileStoneDeadLines_ProjectMileStone" Association="FYPModel.FK_ProjectMileStoneDeadLines_ProjectMileStone">
+      <End Role="ProjectMileStone" EntitySet="ProjectMileStones" />
+      <End Role="ProjectMileStoneDeadLine" EntitySet="ProjectMileStoneDeadLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStone_ProjectMileStone" Association="FYPModel.FK_UploadedMileStone_ProjectMileStone">
+      <End Role="ProjectMileStone" EntitySet="ProjectMileStones" />
+      <End Role="UploadedMileStone" EntitySet="UploadedMileStones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectMileStoneDeadLines_ProjectSession" Association="FYPModel.FK_ProjectMileStoneDeadLines_ProjectSession">
+      <End Role="ProjectSession" EntitySet="ProjectSessions" />
+      <End Role="ProjectMileStoneDeadLine" EntitySet="ProjectMileStoneDeadLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_ProjectSession" Association="FYPModel.FK_User_ProjectSession">
+      <End Role="ProjectSession" EntitySet="ProjectSessions" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_ResearchGroup" Association="FYPModel.FK_User_ResearchGroup">
+      <End Role="ResearchGroup" EntitySet="ResearchGroups" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Role_User" Association="FYPModel.FK_Role_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Role" EntitySet="Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="FYPModel.FK_User_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStone_User" Association="FYPModel.FK_UploadedMileStone_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UploadedMileStone" EntitySet="UploadedMileStones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStoneDocs_UploadedMileStone" Association="FYPModel.FK_UploadedMileStoneDocs_UploadedMileStone">
+      <End Role="UploadedMileStone" EntitySet="UploadedMileStones" />
+      <End Role="UploadedMileStoneDoc" EntitySet="UploadedMileStoneDocs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStoneDocs_UploadedMileStone1" Association="FYPModel.FK_UploadedMileStoneDocs_UploadedMileStone1">
+      <End Role="UploadedMileStone" EntitySet="UploadedMileStones" />
+      <End Role="UploadedMileStoneDoc" EntitySet="UploadedMileStoneDocs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStoneDocsVersions_UploadedMileStone" Association="FYPModel.FK_UploadedMileStoneDocsVersions_UploadedMileStone">
+      <End Role="UploadedMileStone" EntitySet="UploadedMileStones" />
+      <End Role="UploadedMileStoneDocsVersion" EntitySet="UploadedMileStoneDocsVersions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadedMileStoneDocs_User" Association="FYPModel.FK_UploadedMileStoneDocs_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UploadedMileStoneDoc" EntitySet="UploadedMileStoneDocs" />
+    </AssociationSet>
+    <FunctionImport Name="SP_GetDocDetailSubmittedBy" ReturnType="Collection(FYPModel.SP_GetDocDetailSubmittedBy_Result)">
+      <Parameter Name="umsdid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="SupervisodBies" EntityType="FYPModel.SupervisodBy" />
+    <EntitySet Name="WeeklyMeetings" EntityType="FYPModel.WeeklyMeeting" />
+    <AssociationSet Name="FK_SupervisodBy_Project" Association="FYPModel.FK_SupervisodBy_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="SupervisodBy" EntitySet="SupervisodBies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WeeklyMeetings_Project" Association="FYPModel.FK_WeeklyMeetings_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="WeeklyMeeting" EntitySet="WeeklyMeetings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SupervisodBy_User" Association="FYPModel.FK_SupervisodBy_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SupervisodBy" EntitySet="SupervisodBies" />
+    </AssociationSet>
+    <FunctionImport Name="SP_DistributeDocsToSupervisor">
+      <Parameter Name="umsid" Mode="In" Type="Int64" />
+      <Parameter Name="loggedUserId" Mode="In" Type="Int64" />
+      <Parameter Name="umsdid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetCommentsByPcMembers" ReturnType="Collection(FYPModel.SP_GetCommentsByPcMembers_Result)">
+      <Parameter Name="projId" Mode="In" Type="Int64" />
+      <Parameter Name="pmsId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetDataForGridSupervisor" ReturnType="Collection(FYPModel.SP_GetDataForGridSupervisor_Result)">
+      <Parameter Name="uId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SubmitCommentByPCHead">
+      <Parameter Name="pid" Mode="In" Type="Int64" />
+      <Parameter Name="uId" Mode="In" Type="Int64" />
+      <Parameter Name="pmsid" Mode="In" Type="Int64" />
+      <Parameter Name="commentByPcHead" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_MakeCommentsVisibleToStudent">
+      <Parameter Name="psid" Mode="In" Type="Int64" />
+      <Parameter Name="pmsid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_AssignedDocsToPC" ReturnType="Collection(FYPModel.SP_AssignedDocsToPC_Result)">
+      <Parameter Name="SessionId" Mode="In" Type="Int64" />
+      <Parameter Name="MileStoneId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="PresentationSchedules" EntityType="FYPModel.PresentationSchedule" />
+    <EntitySet Name="ScheduleFacultyStudents" EntityType="FYPModel.ScheduleFacultyStudent" />
+    <EntitySet Name="TimeSlots" EntityType="FYPModel.TimeSlot" />
+    <AssociationSet Name="FK_PresentationSchedule_Project" Association="FYPModel.FK_PresentationSchedule_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="PresentationSchedule" EntitySet="PresentationSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PresentationSchedule_ProjectMileStone" Association="FYPModel.FK_PresentationSchedule_ProjectMileStone">
+      <End Role="ProjectMileStone" EntitySet="ProjectMileStones" />
+      <End Role="PresentationSchedule" EntitySet="PresentationSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PresentationSchedule_ProjectSession" Association="FYPModel.FK_PresentationSchedule_ProjectSession">
+      <End Role="ProjectSession" EntitySet="ProjectSessions" />
+      <End Role="PresentationSchedule" EntitySet="PresentationSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduleFacultyStudent_TimeSlots" Association="FYPModel.FK_ScheduleFacultyStudent_TimeSlots">
+      <End Role="TimeSlot" EntitySet="TimeSlots" />
+      <End Role="ScheduleFacultyStudent" EntitySet="ScheduleFacultyStudents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduleFacultyStudent_Project" Association="FYPModel.FK_ScheduleFacultyStudent_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ScheduleFacultyStudent" EntitySet="ScheduleFacultyStudents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduleFacultyStudent_User" Association="FYPModel.FK_ScheduleFacultyStudent_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ScheduleFacultyStudent" EntitySet="ScheduleFacultyStudents" />
+    </AssociationSet>
+    <FunctionImport Name="SP_CheckWeeklyScheduleOfFacultyAndStudent">
+      <Parameter Name="ProjectId" Mode="In" Type="Int64" />
+      <Parameter Name="Day" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="In" Type="Int64" />
+      <Parameter Name="CheckExitance" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="RoomsForPresentations" EntityType="FYPModel.RoomsForPresentation" />
+    <AssociationSet Name="FK_PresentationSchedule_RoomsForPresentation" Association="FYPModel.FK_PresentationSchedule_RoomsForPresentation">
+      <End Role="RoomsForPresentation" EntitySet="RoomsForPresentations" />
+      <End Role="PresentationSchedule" EntitySet="PresentationSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateDocument_ProjectSession" Association="FYPModel.FK_TemplateDocument_ProjectSession">
+      <End Role="ProjectSession" EntitySet="ProjectSessions" />
+      <End Role="TemplateDocument" EntitySet="TemplateDocuments" />
+    </AssociationSet>
+    <FunctionImport Name="SP_GetRecordsForPresentation" ReturnType="Collection(FYPModel.SP_GetRecordsForPresentation_Result)">
+      <Parameter Name="psid" Mode="In" Type="Int64" />
+      <Parameter Name="pmsid" Mode="In" Type="Int64" />
+      <Parameter Name="number" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CheckConflictPresentationTimings">
+      <Parameter Name="presentationDate" Mode="In" Type="DateTime" />
+      <Parameter Name="psid" Mode="In" Type="Int64" />
+      <Parameter Name="pmsid" Mode="In" Type="Int64" />
+      <Parameter Name="isExist" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetPresentationSchedule" ReturnType="Collection(FYPModel.SP_GetPresentationSchedule_Result)">
+      <Parameter Name="psid" Mode="In" Type="Int64" />
+      <Parameter Name="pmsid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetFreeSlotsDayBased" ReturnType="Collection(FYPModel.SP_GetFreeSlotsDayBased_Result)">
+      <Parameter Name="userId" Mode="In" Type="Int64" />
+      <Parameter Name="day" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetMatchingFreeTime" ReturnType="Collection(FYPModel.SP_GetMatchingFreeTime_Result)">
+      <Parameter Name="projectId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetPresentationsToStudent" ReturnType="Collection(FYPModel.SP_GetPresentationsToStudent_Result)">
+      <Parameter Name="psid" Mode="In" Type="Int64" />
+      <Parameter Name="pmsid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetPresentationsToIndividualUser" ReturnType="Collection(FYPModel.SP_GetPresentationsToIndividualUser_Result)">
+      <Parameter Name="psid" Mode="In" Type="Int64" />
+      <Parameter Name="userId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <AssociationSet Name="FK_Announcments_User" Association="FYPModel.FK_Announcments_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Announcment" EntitySet="Announcments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MileStoneEvaluation_User" Association="FYPModel.FK_MileStoneEvaluation_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MileStoneEvaluation" EntitySet="MileStoneEvaluations" />
+    </AssociationSet>
+    <FunctionImport Name="SP_DeleteDocumentFromUMDoc">
+      <Parameter Name="umsid" Mode="In" Type="Int64" />
+      <Parameter Name="checkBit" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DocSubmissionStatus">
+      <Parameter Name="projectId" Mode="In" Type="Int64" />
+      <Parameter Name="scope" Mode="InOut" Type="Boolean" />
+      <Parameter Name="srs" Mode="InOut" Type="Boolean" />
+      <Parameter Name="sds" Mode="InOut" Type="Boolean" />
+      <Parameter Name="rpt" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetProjectDetailForReport" ReturnType="Collection(FYPModel.SP_GetProjectDetailForReport_Result)">
+      <Parameter Name="projId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetProjectStudentsForReport" ReturnType="Collection(FYPModel.SP_GetProjectStudentsForReport_Result)">
+      <Parameter Name="pid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetSubmittedMileStonesList" ReturnType="Collection(FYPModel.SP_GetSubmittedMileStonesList_Result)">
+      <Parameter Name="ProjectId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetUploadedDocsCommentsByPCForReport" ReturnType="Collection(FYPModel.SP_GetUploadedDocsCommentsByPCForReport_Result)">
+      <Parameter Name="projId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetWeeklyMeetingDetailsForReport" ReturnType="Collection(FYPModel.SP_GetWeeklyMeetingDetailsForReport_Result)">
+      <Parameter Name="projId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="ProjectDirectories" EntityType="FYPModel.ProjectDirectory" />
+    <AssociationSet Name="FK_ProjectDirectory_Project" Association="FYPModel.FK_ProjectDirectory_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ProjectDirectory" EntitySet="ProjectDirectories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDirectory_ProjectSession1" Association="FYPModel.FK_ProjectDirectory_ProjectSession1">
+      <End Role="ProjectSession" EntitySet="ProjectSessions" />
+      <End Role="ProjectDirectory" EntitySet="ProjectDirectories" />
+    </AssociationSet>
+    <FunctionImport Name="SP_DeleteDocumentFromUMDoc1">
+      <Parameter Name="umsid" Mode="In" Type="Int64" />
+      <Parameter Name="checkBit" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="AuthenticateUser">
+    <Property Type="Int64" Name="UId" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="OfficePhone" Nullable="false" MaxLength="13" />
+    <Property Type="String" Name="MobileNumber" Nullable="false" MaxLength="13" />
+    <Property Type="Int16" Name="RoleId" Nullable="false" />
+    <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+    <Property Type="Boolean" Name="Status" Nullable="false" />
+    <Property Type="Int16" Name="Rid" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="PGId" Nullable="true" />
+    <Property Type="Int64" Name="StudentId" Nullable="true" />
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="StudentsProjectNotAssigned">
+    <Property Type="Int64" Name="UId" Nullable="false" />
+    <Property Type="Double" Name="Cgpa" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="MobileNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="RegistrationNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Semester" Nullable="true" />
+    <Property Type="Int64" Name="ProjectSessionId" Nullable="true" />
+    <Property Type="Int16" Name="RoleId" Nullable="false" />
+    <Property Type="Boolean" Name="Status" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_GetDocumentsSubmittedData">
+    <Property Type="Int64" Name="UId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="RegistrationNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Semester" Nullable="true" />
+    <Property Type="String" Name="Tiltle" Nullable="false" MaxLength="1000" />
+    <Property Type="DateTime" Name="SubmittedDate" Nullable="false" Precision="23" />
+    <Property Type="Int64" Name="ProjectId" Nullable="false" />
+    <Property Type="Int64" Name="InCustody" Nullable="true" />
+    <Property Type="Int64" Name="UMSId" Nullable="false" />
+    <Property Type="Int64" Name="UMSDId" Nullable="false" />
+    <Property Type="String" Name="MileStoneName" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="UploadedFile" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="FromPc" Nullable="true" />
+    <Property Type="Boolean" Name="FromStudent" Nullable="true" />
+    <Property Type="Boolean" Name="ReadStatus" Nullable="true" />
+    <Property Type="Boolean" Name="ToAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CustodianDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="StatusComment" Nullable="true" />
+    <Property Type="Int64" Name="PMSId" Nullable="false" />
+    <Property Type="Boolean" Name="EvalStatus" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetProjectStudentsWithReg_Result">
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="105" />
+  </ComplexType>
+  <ComplexType Name="SP_GetDataForGridStudent_Result">
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+    <Property Type="Int64" Name="UMSId" Nullable="false" />
+    <Property Type="Int64" Name="ProjectId" Nullable="false" />
+    <Property Type="Int64" Name="UMSDId" Nullable="false" />
+    <Property Type="DateTime" Name="SubmittedDate" Nullable="false" Precision="23" />
+    <Property Type="Int64" Name="InCustody" Nullable="true" />
+    <Property Type="String" Name="UploadedFile" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="ReadStatus" Nullable="true" />
+    <Property Type="Boolean" Name="EvalStatus" Nullable="true" />
+    <Property Type="String" Name="Tiltle" Nullable="false" MaxLength="1000" />
+  </ComplexType>
+  <ComplexType Name="SP_GetProjectStudentsWithId_Result">
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="UId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_GetRouteHistoryOfDocs_Result">
+    <Property Type="Int64" Name="UId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="RegistrationNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Semester" Nullable="true" />
+    <Property Type="String" Name="Tiltle" Nullable="false" MaxLength="1000" />
+    <Property Type="DateTime" Name="SubmittedDate" Nullable="false" Precision="23" />
+    <Property Type="Int64" Name="ProjectId" Nullable="false" />
+    <Property Type="Int64" Name="InCustody" Nullable="true" />
+    <Property Type="Int64" Name="UMSId" Nullable="false" />
+    <Property Type="Int64" Name="UMSDId" Nullable="false" />
+    <Property Type="String" Name="MileStoneName" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="UploadedFile" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="FromPc" Nullable="true" />
+    <Property Type="Boolean" Name="FromStudent" Nullable="true" />
+    <Property Type="Boolean" Name="ReadStatus" Nullable="true" />
+    <Property Type="Boolean" Name="ToAdmin" Nullable="true" />
+    <Property Type="DateTime" Name="CustodianDate" Nullable="false" Precision="23" />
+  </ComplexType>
+  <EntityType Name="Announcment">
+    <Key>
+      <PropertyRef Name="AnnId" />
+    </Key>
+    <Property Type="Int64" Name="AnnId" Nullable="false" />
+    <Property Type="Int64" Name="PSId" />
+    <Property Type="String" Name="Title" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProjectSession" Relationship="FYPModel.FK_Announcments_ProjectSession" FromRole="Announcment" ToRole="ProjectSession" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="String" Name="Upload" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="CreatedBy" />
+    <NavigationProperty Name="User" Relationship="FYPModel.FK_Announcments_User" FromRole="Announcment" ToRole="User" />
+    <Property Name="IsVisibleToBothSessions" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Communication">
+    <Key>
+      <PropertyRef Name="COMId" />
+    </Key>
+    <Property Type="Int64" Name="COMId" Nullable="false" />
+    <Property Type="Int64" Name="MessageFrom" />
+    <Property Type="Int64" Name="MessageTo" />
+    <Property Type="String" Name="Title" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="ReadStatus" />
+    <Property Type="Int64" Name="ParentId" />
+    <Property Type="DateTime" Name="ReceivedDate" Precision="3" />
+    <Property Type="Boolean" Name="Replied" />
+    <NavigationProperty Name="User" Relationship="FYPModel.FK_Communication_User" FromRole="Communication" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="FYPModel.FK_Communication_User1" FromRole="Communication" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DId" />
+    </Key>
+    <Property Type="Int32" Name="DId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Users" Relationship="FYPModel.FK_User_Department" FromRole="Department" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Designation">
+    <Key>
+      <PropertyRef Name="DId" />
+    </Key>
+    <Property Type="String" Name="DId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Designation1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MileStoneEvaluation">
+    <Key>
+      <PropertyRef Name="MSEId" />
+    </Key>
+    <Property Type="Int64" Name="MSEId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ProjectId" Nullable="false" />
+    <Property Type="Int64" Name="StudentId" Nullable="false" />
+    <Property Type="String" Name="CommentByPC" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="CommentedBy" />
+    <Property Type="String" Name="CommentByHead" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="CommentedByPCHead" />
+    <Property Type="DateTime" Name="ComentedDate" Precision="3" />
+    <Property Type="Int64" Name="PMSId" Nullable="false" />
+    <NavigationProperty Name="Project" Relationship="FYPModel.FK_MileStoneEvaluation_Project" FromRole="MileStoneEvaluation" ToRole="Project" />
+    <NavigationProperty Name="ProjectMileStone" Relationship="FYPModel.FK_MileStoneEvaluation_ProjectMileStone" FromRole="MileStoneEvaluation" ToRole="ProjectMileStone" />
+    <NavigationProperty Name="User1" Relationship="FYPModel.FK_MileStoneEvaluation_User1" FromRole="MileStoneEvaluation" ToRole="User" />
+    <NavigationProperty Name="User2" Relationship="FYPModel.FK_MileStoneEvaluation_User2" FromRole="MileStoneEvaluation" ToRole="User" />
+    <Property Type="String" Name="CommentByPcAboutProject" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsVisibletToStudent" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="FYPModel.FK_MileStoneEvaluation_User" FromRole="MileStoneEvaluation" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="PId" />
+    </Key>
+    <Property Type="Int64" Name="PId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Tiltle" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UploadedFile" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="UploadedBy" Nullable="false" />
+    <Property Type="DateTime" Name="UploadedDate" Nullable="false" Precision="3" />
+    <Property Type="Int16" Name="Status" Nullable="false" />
+    <Property Type="Int64" Name="StudentId" />
+    <Property Type="Int64" Name="ProjectSessionId" Nullable="false" />
+    <Property Type="Int64" Name="ProposedBy" />
+    <Property Type="String" Name="KeyFeatures" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="Complexity" />
+    <Property Type="String" Name="EffortsRequired" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Domain" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RequiredToolsAndTech" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SpecialCharactersRequired" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="researchGroupId" />
+    <NavigationProperty Name="MileStoneEvaluations" Relationship="FYPModel.FK_MileStoneEvaluation_Project" FromRole="Project" ToRole="MileStoneEvaluation" />
+    <NavigationProperty Name="ProjectSession" Relationship="FYPModel.FK_Project_ProjectSession" FromRole="Project" ToRole="ProjectSession" />
+    <NavigationProperty Name="ResearchGroup" Relationship="FYPModel.FK_Project_ResearchGroup" FromRole="Project" ToRole="ResearchGroup" />
+    <NavigationProperty Name="User" Relationship="FYPModel.FK_Project_User" FromRole="Project" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="FYPModel.FK_Project_User1" FromRole="Project" ToRole="User" />
+    <NavigationProperty Name="ProjectGroups" Relationship="FYPModel.FK_ProjectGroup_Project" FromRole="Project" ToRole="ProjectGroup" />
+    <NavigationProperty Name="UploadedMileStones" Relationship="FYPModel.FK_UploadedMileStone_Project" FromRole="Project" ToRole="UploadedMileStone" />
+    <NavigationProperty Name="SupervisodBies" Relationship="FYPModel.FK_SupervisodBy_Project" FromRole="Project" ToRole="SupervisodBy" />
+    <NavigationProperty Name="WeeklyMeetings" Relationship="FYPModel.FK_WeeklyMeetings_Project" FromRole="Project" ToRole="WeeklyMeeting" />
+    <NavigationProperty Name="PresentationSchedules" Relationship="FYPModel.FK_PresentationSchedule_Project" FromRole="Project" ToRole="PresentationSchedule" />
+    <NavigationProperty Name="ScheduleFacultyStudents" Relationship="FYPModel.FK_ScheduleFacultyStudent_Project" FromRole="Project" ToRole="ScheduleFacultyStudent" />
+    <NavigationProperty Name="ProjectDirectories" Relationship="FYPModel.FK_ProjectDirectory_Project" FromRole="Project" ToRole="ProjectDirectory" />
+  </EntityType>
+  <EntityType Name="ProjectGroup">
+    <Key>
+      <PropertyRef Name="PGId" />
+    </Key>
+    <Property Type="Int64" Name="PGId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="StudentId" Nullable="false" />
+    <Property Type="Int64" Name="ProjectId" Nullable="false" />
+    <NavigationProperty Name="Project" Relationship="FYPModel.FK_ProjectGroup_Project" FromRole="ProjectGroup" ToRole="Project" />
+    <NavigationProperty Name="User" Relationship="FYPModel.FK_ProjectGroup_User" FromRole="ProjectGroup" ToRole="User" />
+  </EntityType>
+  <EntityType Name="ProjectMileStone">
+    <Key>
+      <PropertyRef Name="PMSId" />
+    </Key>
+    <Property Type="Int64" Name="PMSId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MileStoneEvaluations" Relationship="FYPModel.FK_MileStoneEvaluation_ProjectMileStone" FromRole="ProjectMileStone" ToRole="MileStoneEvaluation" />
+    <NavigationProperty Name="ProjectMileStoneDeadLines" Relationship="FYPModel.FK_ProjectMileStoneDeadLines_ProjectMileStone" FromRole="ProjectMileStone" ToRole="ProjectMileStoneDeadLine" />
+    <NavigationProperty Name="UploadedMileStones" Relationship="FYPModel.FK_UploadedMileStone_ProjectMileStone" FromRole="ProjectMileStone" ToRole="UploadedMileStone" />
+    <NavigationProperty Name="PresentationSchedules" Relationship="FYPModel.FK_PresentationSchedule_ProjectMileStone" FromRole="ProjectMileStone" ToRole="PresentationSchedule" />
+  </EntityType>
+  <EntityType Name="ProjectMileStoneDeadLine">
+    <Key>
+      <PropertyRef Name="PMSDId" />
+    </Key>
+    <Property Type="Int64" Name="PMSDId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="PMSId" Nullable="false" />
+    <Property Type="DateTime" Name="DeadLine" Precision="3" Nullable="false" />
+    <Property Type="Int64" Name="PSId" Nullable="false" />
+    <NavigationProperty Name="ProjectMileStone" Relationship="FYPModel.FK_ProjectMileStoneDeadLines_ProjectMileStone" FromRole="ProjectMileStoneDeadLine" ToRole="ProjectMileStone" />
+    <NavigationProperty Name="ProjectSession" Relationship="FYPModel.FK_ProjectMileStoneDeadLines_ProjectSession" FromRole="ProjectMileStoneDeadLine" ToRole="ProjectSession" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Type="Time" Name="TimeSpan" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectSession">
+    <Key>
+      <PropertyRef Name="PSId" />
+    </Key>
+    <Property Type="Int64" Name="PSId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Status" />
+    <NavigationProperty Name="Announcments" Relationship="FYPModel.FK_Announcments_ProjectSession" FromRole="ProjectSession" ToRole="Announcment" />
+    <NavigationProperty Name="Projects" Relationship="FYPModel.FK_Project_ProjectSession" FromRole="ProjectSession" ToRole="Project" />
+    <NavigationProperty Name="ProjectMileStoneDeadLines" Relationship="FYPModel.FK_ProjectMileStoneDeadLines_ProjectSession" FromRole="ProjectSession" ToRole="ProjectMileStoneDeadLine" />
+    <NavigationProperty Name="Users" Relationship="FYPModel.FK_User_ProjectSession" FromRole="ProjectSession" ToRole="User" />
+    <Property Type="Int64" Name="Year" />
+    <NavigationProperty Name="PresentationSchedules" Relationship="FYPModel.FK_PresentationSchedule_ProjectSession" FromRole="ProjectSession" ToRole="PresentationSchedule" />
+    <NavigationProperty Name="TemplateDocuments" Relationship="FYPModel.FK_TemplateDocument_ProjectSession" FromRole="ProjectSession" ToRole="TemplateDocument" />
+    <NavigationProperty Name="ProjectDirectories" Relationship="FYPModel.FK_ProjectDirectory_ProjectSession1" FromRole="ProjectSession" ToRole="ProjectDirectory" />
+  </EntityType>
+  <EntityType Name="ResearchGroup">
+    <Key>
+      <PropertyRef Name="ResearchId" />
+    </Key>
+    <Property Type="Int32" Name="ResearchId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Projects" Relationship="FYPModel.FK_Project_ResearchGroup" FromRole="ResearchGroup" ToRole="Project" />
+    <NavigationProperty Name="Users" Relationship="FYPModel.FK_User_ResearchGroup" FromRole="ResearchGroup" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Rid" />
+    </Key>
+    <Property Type="Int16" Name="Rid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreationDate" Precision="3" />
+    <NavigationProperty Name="User" Relationship="FYPModel.FK_Role_User" FromRole="Role" ToRole="User" />
+    <NavigationProperty Name="Users" Relationship="FYPModel.FK_User_Role" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="TemplateDocument">
+    <Key>
+      <PropertyRef Name="TDId" />
+    </Key>
+    <Property Type="Int32" Name="TDId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UploadedFile" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="UploadedDate" Nullable="false" Precision="3" />
+    <Property Type="Int64" Name="PSId" />
+    <NavigationProperty Name="ProjectSession" Relationship="FYPModel.FK_TemplateDocument_ProjectSession" FromRole="TemplateDocument" ToRole="ProjectSession" />
+  </EntityType>
+  <EntityType Name="UploadedMileStone">
+    <Key>
+      <PropertyRef Name="UMSId" />
+    </Key>
+    <Property Type="Int64" Name="UMSId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="PMSId" Nullable="false" />
+    <Property Type="Int64" Name="ProjectId" Nullable="false" />
+    <Property Type="DateTime" Name="SubmittedDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="UploadedFile" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="UploadedBy" />
+    <NavigationProperty Name="Project" Relationship="FYPModel.FK_UploadedMileStone_Project" FromRole="UploadedMileStone" ToRole="Project" />
+    <NavigationProperty Name="ProjectMileStone" Relationship="FYPModel.FK_UploadedMileStone_ProjectMileStone" FromRole="UploadedMileStone" ToRole="ProjectMileStone" />
+    <NavigationProperty Name="User" Relationship="FYPModel.FK_UploadedMileStone_User" FromRole="UploadedMileStone" ToRole="User" />
+    <NavigationProperty Name="UploadedMileStoneDocs" Relationship="FYPModel.FK_UploadedMileStoneDocs_UploadedMileStone" FromRole="UploadedMileStone" ToRole="UploadedMileStoneDoc" />
+    <NavigationProperty Name="UploadedMileStoneDocs1" Relationship="FYPModel.FK_UploadedMileStoneDocs_UploadedMileStone1" FromRole="UploadedMileStone" ToRole="UploadedMileStoneDoc" />
+    <NavigationProperty Name="UploadedMileStoneDocsVersions" Relationship="FYPModel.FK_UploadedMileStoneDocsVersions_UploadedMileStone" FromRole="UploadedMileStone" ToRole="UploadedMileStoneDocsVersion" />
+    <Property Type="Int64" Name="SupervisorId" Nullable="false" />
+    <Property Type="String" Name="CommentBySupervisor" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UploadedMileStoneDoc">
+    <Key>
+      <PropertyRef Name="UMSDId" />
+    </Key>
+    <Property Type="Int64" Name="UMSDId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="InCustody" />
+    <Property Type="DateTime" Name="CustodianDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="StatusDate" Precision="3" />
+    <Property Type="Int64" Name="UMSId" />
+    <Property Type="Boolean" Name="ToAdmin" />
+    <Property Type="Boolean" Name="FromPC" />
+    <Property Type="Boolean" Name="FromStudent" />
+    <Property Type="Boolean" Name="ReadStatus" />
+    <Property Type="Int64" Name="ForwardedTo" />
+    <NavigationProperty Name="UploadedMileStone" Relationship="FYPModel.FK_UploadedMileStoneDocs_UploadedMileStone" FromRole="UploadedMileStoneDoc" ToRole="UploadedMileStone" />
+    <NavigationProperty Name="UploadedMileStone1" Relationship="FYPModel.FK_UploadedMileStoneDocs_UploadedMileStone1" FromRole="UploadedMileStoneDoc" ToRole="UploadedMileStone" />
+    <NavigationProperty Name="User" Relationship="FYPModel.FK_UploadedMileStoneDocs_User" FromRole="UploadedMileStoneDoc" ToRole="User" />
+    <Property Type="String" Name="StatusComment" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="EvalStatus" />
+  </EntityType>
+  <EntityType Name="UploadedMileStoneDocsVersion">
+    <Key>
+      <PropertyRef Name="UMSDVId" />
+    </Key>
+    <Property Type="Int64" Name="UMSDVId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="UMSId" />
+    <Property Type="String" Name="UploadedFile" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="UploadedDate" Precision="3" />
+    <Property Type="Int64" Name="UploadedBy" />
+    <NavigationProperty Name="UploadedMileStone" Relationship="FYPModel.FK_UploadedMileStoneDocsVersions_UploadedMileStone" FromRole="UploadedMileStoneDocsVersion" ToRole="UploadedMileStone" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UId" />
+    </Key>
+    <Property Type="Int64" Name="UId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CiitExtension" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MobileNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="RoleId" Nullable="false" />
+    <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+    <Property Type="Boolean" Name="Status" Nullable="false" />
+    <Property Type="String" Name="RegistrationNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Designation" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="Cgpa" />
+    <Property Type="Int32" Name="Semester" />
+    <Property Type="Int32" Name="ResearchId" />
+    <Property Type="String" Name="UploadImage" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ProjectSessionId" />
+    <NavigationProperty Name="Communications" Relationship="FYPModel.FK_Communication_User" FromRole="User" ToRole="Communication" />
+    <NavigationProperty Name="Communications1" Relationship="FYPModel.FK_Communication_User1" FromRole="User" ToRole="Communication" />
+    <NavigationProperty Name="Department" Relationship="FYPModel.FK_User_Department" FromRole="User" ToRole="Department" />
+    <NavigationProperty Name="MileStoneEvaluations1" Relationship="FYPModel.FK_MileStoneEvaluation_User1" FromRole="User" ToRole="MileStoneEvaluation" />
+    <NavigationProperty Name="MileStoneEvaluations2" Relationship="FYPModel.FK_MileStoneEvaluation_User2" FromRole="User" ToRole="MileStoneEvaluation" />
+    <NavigationProperty Name="Projects" Relationship="FYPModel.FK_Project_User" FromRole="User" ToRole="Project" />
+    <NavigationProperty Name="Projects1" Relationship="FYPModel.FK_Project_User1" FromRole="User" ToRole="Project" />
+    <NavigationProperty Name="ProjectGroups" Relationship="FYPModel.FK_ProjectGroup_User" FromRole="User" ToRole="ProjectGroup" />
+    <NavigationProperty Name="ProjectSession" Relationship="FYPModel.FK_User_ProjectSession" FromRole="User" ToRole="ProjectSession" />
+    <NavigationProperty Name="ResearchGroup" Relationship="FYPModel.FK_User_ResearchGroup" FromRole="User" ToRole="ResearchGroup" />
+    <NavigationProperty Name="Roles" Relationship="FYPModel.FK_Role_User" FromRole="User" ToRole="Role" />
+    <NavigationProperty Name="Role" Relationship="FYPModel.FK_User_Role" FromRole="User" ToRole="Role" />
+    <NavigationProperty Name="UploadedMileStones" Relationship="FYPModel.FK_UploadedMileStone_User" FromRole="User" ToRole="UploadedMileStone" />
+    <NavigationProperty Name="UploadedMileStoneDocs" Relationship="FYPModel.FK_UploadedMileStoneDocs_User" FromRole="User" ToRole="UploadedMileStoneDoc" />
+    <NavigationProperty Name="SupervisodBies" Relationship="FYPModel.FK_SupervisodBy_User" FromRole="User" ToRole="SupervisodBy" />
+    <NavigationProperty Name="ScheduleFacultyStudents" Relationship="FYPModel.FK_ScheduleFacultyStudent_User" FromRole="User" ToRole="ScheduleFacultyStudent" />
+    <NavigationProperty Name="Announcments" Relationship="FYPModel.FK_Announcments_User" FromRole="User" ToRole="Announcment" />
+    <NavigationProperty Name="MileStoneEvaluations" Relationship="FYPModel.FK_MileStoneEvaluation_User" FromRole="User" ToRole="MileStoneEvaluation" />
+  </EntityType>
+  <Association Name="FK_Announcments_ProjectSession">
+    <End Type="FYPModel.ProjectSession" Role="ProjectSession" Multiplicity="0..1" />
+    <End Type="FYPModel.Announcment" Role="Announcment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="Announcment">
+        <PropertyRef Name="PSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Communication_User">
+    <End Type="FYPModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FYPModel.Communication" Role="Communication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="Communication">
+        <PropertyRef Name="MessageFrom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Communication_User1">
+    <End Type="FYPModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FYPModel.Communication" Role="Communication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="Communication">
+        <PropertyRef Name="MessageTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Department">
+    <End Type="FYPModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="FYPModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MileStoneEvaluation_Project">
+    <End Type="FYPModel.Project" Role="Project" Multiplicity="1" />
+    <End Type="FYPModel.MileStoneEvaluation" Role="MileStoneEvaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="MileStoneEvaluation">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MileStoneEvaluation_ProjectMileStone">
+    <End Type="FYPModel.ProjectMileStone" Role="ProjectMileStone" Multiplicity="1" />
+    <End Type="FYPModel.MileStoneEvaluation" Role="MileStoneEvaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectMileStone">
+        <PropertyRef Name="PMSId" />
+      </Principal>
+      <Dependent Role="MileStoneEvaluation">
+        <PropertyRef Name="PMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MileStoneEvaluation_User1">
+    <End Type="FYPModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FYPModel.MileStoneEvaluation" Role="MileStoneEvaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="MileStoneEvaluation">
+        <PropertyRef Name="CommentedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MileStoneEvaluation_User2">
+    <End Type="FYPModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FYPModel.MileStoneEvaluation" Role="MileStoneEvaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="MileStoneEvaluation">
+        <PropertyRef Name="CommentedByPCHead" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_ProjectSession">
+    <End Type="FYPModel.ProjectSession" Role="ProjectSession" Multiplicity="1" />
+    <End Type="FYPModel.Project" Role="Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="ProjectSessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_ResearchGroup">
+    <End Type="FYPModel.ResearchGroup" Role="ResearchGroup" Multiplicity="0..1" />
+    <End Type="FYPModel.Project" Role="Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResearchGroup">
+        <PropertyRef Name="ResearchId" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="researchGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_User">
+    <End Type="FYPModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FYPModel.Project" Role="Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_User1">
+    <End Type="FYPModel.User" Role="User" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="FYPModel.Project" Role="Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="ProposedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectGroup_Project">
+    <End Type="FYPModel.Project" Role="Project" Multiplicity="1" />
+    <End Type="FYPModel.ProjectGroup" Role="ProjectGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="ProjectGroup">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStone_Project">
+    <End Type="FYPModel.Project" Role="Project" Multiplicity="1" />
+    <End Type="FYPModel.UploadedMileStone" Role="UploadedMileStone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="UploadedMileStone">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectGroup_User">
+    <End Type="FYPModel.User" Role="User" Multiplicity="1" />
+    <End Type="FYPModel.ProjectGroup" Role="ProjectGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="ProjectGroup">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectMileStoneDeadLines_ProjectMileStone">
+    <End Type="FYPModel.ProjectMileStone" Role="ProjectMileStone" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="FYPModel.ProjectMileStoneDeadLine" Role="ProjectMileStoneDeadLine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectMileStone">
+        <PropertyRef Name="PMSId" />
+      </Principal>
+      <Dependent Role="ProjectMileStoneDeadLine">
+        <PropertyRef Name="PMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStone_ProjectMileStone">
+    <End Type="FYPModel.ProjectMileStone" Role="ProjectMileStone" Multiplicity="1" />
+    <End Type="FYPModel.UploadedMileStone" Role="UploadedMileStone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectMileStone">
+        <PropertyRef Name="PMSId" />
+      </Principal>
+      <Dependent Role="UploadedMileStone">
+        <PropertyRef Name="PMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectMileStoneDeadLines_ProjectSession">
+    <End Type="FYPModel.ProjectSession" Role="ProjectSession" Multiplicity="1" />
+    <End Type="FYPModel.ProjectMileStoneDeadLine" Role="ProjectMileStoneDeadLine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="ProjectMileStoneDeadLine">
+        <PropertyRef Name="PSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_ProjectSession">
+    <End Type="FYPModel.ProjectSession" Role="ProjectSession" Multiplicity="0..1" />
+    <End Type="FYPModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="ProjectSessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_ResearchGroup">
+    <End Type="FYPModel.ResearchGroup" Role="ResearchGroup" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="FYPModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResearchGroup">
+        <PropertyRef Name="ResearchId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="ResearchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Role_User">
+    <End Type="FYPModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FYPModel.Role" Role="Role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="Role">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Type="FYPModel.Role" Role="Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="FYPModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Rid" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStone_User">
+    <End Type="FYPModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FYPModel.UploadedMileStone" Role="UploadedMileStone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="UploadedMileStone">
+        <PropertyRef Name="UploadedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStoneDocs_UploadedMileStone">
+    <End Type="FYPModel.UploadedMileStone" Role="UploadedMileStone" Multiplicity="0..1" />
+    <End Type="FYPModel.UploadedMileStoneDoc" Role="UploadedMileStoneDoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UploadedMileStone">
+        <PropertyRef Name="UMSId" />
+      </Principal>
+      <Dependent Role="UploadedMileStoneDoc">
+        <PropertyRef Name="UMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStoneDocs_UploadedMileStone1">
+    <End Type="FYPModel.UploadedMileStone" Role="UploadedMileStone" Multiplicity="0..1" />
+    <End Type="FYPModel.UploadedMileStoneDoc" Role="UploadedMileStoneDoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UploadedMileStone">
+        <PropertyRef Name="UMSId" />
+      </Principal>
+      <Dependent Role="UploadedMileStoneDoc">
+        <PropertyRef Name="UMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStoneDocsVersions_UploadedMileStone">
+    <End Type="FYPModel.UploadedMileStone" Role="UploadedMileStone" Multiplicity="0..1" />
+    <End Type="FYPModel.UploadedMileStoneDocsVersion" Role="UploadedMileStoneDocsVersion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UploadedMileStone">
+        <PropertyRef Name="UMSId" />
+      </Principal>
+      <Dependent Role="UploadedMileStoneDocsVersion">
+        <PropertyRef Name="UMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadedMileStoneDocs_User">
+    <End Type="FYPModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FYPModel.UploadedMileStoneDoc" Role="UploadedMileStoneDoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="UploadedMileStoneDoc">
+        <PropertyRef Name="InCustody" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_GetDocDetailSubmittedBy_Result">
+    <Property Type="Int64" Name="UId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="RegistrationNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Semester" Nullable="true" />
+    <Property Type="String" Name="Tiltle" Nullable="false" MaxLength="1000" />
+    <Property Type="DateTime" Name="SubmittedDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="StatusComment" Nullable="true" />
+    <Property Type="Int64" Name="ProjectId" Nullable="false" />
+    <Property Type="Int64" Name="InCustody" Nullable="true" />
+    <Property Type="Int64" Name="UMSId" Nullable="false" />
+    <Property Type="Int64" Name="UMSDId" Nullable="false" />
+    <Property Type="String" Name="UploadedFile" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="PMSId" Nullable="false" />
+    <Property Type="String" Name="MileStoneName" Nullable="false" MaxLength="200" />
+    <Property Type="DateTime" Name="CustodianDate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="FromPc" Nullable="true" />
+    <Property Type="Boolean" Name="FromStudent" Nullable="true" />
+    <Property Type="Boolean" Name="ReadStatus" Nullable="true" />
+    <Property Type="Boolean" Name="EvalStatus" Nullable="true" />
+    <Property Type="Boolean" Name="ToAdmin" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="SupervisodBy">
+    <Key>
+      <PropertyRef Name="SId" />
+    </Key>
+    <Property Type="Int64" Name="SId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ProjectId" />
+    <Property Type="Int64" Name="SupervisodBy1" />
+    <NavigationProperty Name="Project" Relationship="FYPModel.FK_SupervisodBy_Project" FromRole="SupervisodBy" ToRole="Project" />
+    <NavigationProperty Name="User" Relationship="FYPModel.FK_SupervisodBy_User" FromRole="SupervisodBy" ToRole="User" />
+  </EntityType>
+  <EntityType Name="WeeklyMeeting">
+    <Key>
+      <PropertyRef Name="MId" />
+    </Key>
+    <Property Type="Int64" Name="MId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ProjectId" />
+    <Property Type="String" Name="Title" MaxLength="590" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="MeetingDate" Precision="3" />
+    <NavigationProperty Name="Project" Relationship="FYPModel.FK_WeeklyMeetings_Project" FromRole="WeeklyMeeting" ToRole="Project" />
+    <Property Type="String" Name="CommentBySupervisor" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_SupervisodBy_Project">
+    <End Type="FYPModel.Project" Role="Project" Multiplicity="0..1" />
+    <End Type="FYPModel.SupervisodBy" Role="SupervisodBy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="SupervisodBy">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WeeklyMeetings_Project">
+    <End Type="FYPModel.Project" Role="Project" Multiplicity="0..1" />
+    <End Type="FYPModel.WeeklyMeeting" Role="WeeklyMeeting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="WeeklyMeeting">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SupervisodBy_User">
+    <End Type="FYPModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FYPModel.SupervisodBy" Role="SupervisodBy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="SupervisodBy">
+        <PropertyRef Name="SupervisodBy1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_GetCommentsByPcMembers_Result">
+    <Property Type="String" Name="StudentName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CommentedBy" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CommentByPC" Nullable="true" />
+    <Property Type="String" Name="CommentByHead" Nullable="true" />
+    <Property Type="Int64" Name="CommentedByPCHead" Nullable="true" />
+    <Property Type="Int64" Name="PMSId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_GetDataForGridSupervisor_Result">
+    <Property Type="String" Name="Tiltle" Nullable="false" MaxLength="1000" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+    <Property Type="Int64" Name="UMSId" Nullable="false" />
+    <Property Type="Int64" Name="ProjectId" Nullable="false" />
+    <Property Type="Int64" Name="UMSDId" Nullable="false" />
+    <Property Type="String" Name="UploadedFile" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="SubmittedDate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="EvalStatus" Nullable="true" />
+    <Property Type="Int64" Name="InCustody" Nullable="true" />
+    <Property Type="Boolean" Name="ReadStatus" Nullable="true" />
+    <Property Type="Int64" Name="PSId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_AssignedDocsToPC_Result">
+    <Property Type="Int64" Name="UMSDId" Nullable="false" />
+    <Property Type="Int64" Name="UMSId" Nullable="false" />
+    <Property Type="Int64" Name="PMSId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Tiltle" Nullable="false" MaxLength="1000" />
+    <Property Type="String" Name="DocName" Nullable="false" MaxLength="200" />
+  </ComplexType>
+  <EntityType Name="PresentationSchedule">
+    <Key>
+      <PropertyRef Name="PRSCId" />
+    </Key>
+    <Property Type="Int64" Name="PRSCId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ProjectId" />
+    <Property Type="Time" Name="TimeFrom" Precision="7" />
+    <Property Type="Time" Name="TimeTo" Precision="7" />
+    <Property Type="DateTime" Name="PresentationDate" Precision="3" />
+    <Property Type="Int64" Name="PSId" />
+    <Property Type="Int64" Name="PMSId" />
+    <NavigationProperty Name="Project" Relationship="FYPModel.FK_PresentationSchedule_Project" FromRole="PresentationSchedule" ToRole="Project" />
+    <NavigationProperty Name="ProjectMileStone" Relationship="FYPModel.FK_PresentationSchedule_ProjectMileStone" FromRole="PresentationSchedule" ToRole="ProjectMileStone" />
+    <NavigationProperty Name="ProjectSession" Relationship="FYPModel.FK_PresentationSchedule_ProjectSession" FromRole="PresentationSchedule" ToRole="ProjectSession" />
+    <Property Type="Int32" Name="RoomNumber" />
+    <NavigationProperty Name="RoomsForPresentation" Relationship="FYPModel.FK_PresentationSchedule_RoomsForPresentation" FromRole="PresentationSchedule" ToRole="RoomsForPresentation" />
+  </EntityType>
+  <EntityType Name="ScheduleFacultyStudent">
+    <Key>
+      <PropertyRef Name="ScheduleId" />
+    </Key>
+    <Property Type="Int64" Name="ScheduleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Boolean" Name="isStudent" />
+    <Property Type="Boolean" Name="isFaculty" />
+    <Property Type="Int32" Name="TSId" />
+    <NavigationProperty Name="TimeSlot" Relationship="FYPModel.FK_ScheduleFacultyStudent_TimeSlots" FromRole="ScheduleFacultyStudent" ToRole="TimeSlot" />
+    <Property Type="Int64" Name="ProjectId" />
+    <Property Type="Int64" Name="UserId" />
+    <NavigationProperty Name="Project" Relationship="FYPModel.FK_ScheduleFacultyStudent_Project" FromRole="ScheduleFacultyStudent" ToRole="Project" />
+    <NavigationProperty Name="User" Relationship="FYPModel.FK_ScheduleFacultyStudent_User" FromRole="ScheduleFacultyStudent" ToRole="User" />
+    <Property Type="String" Name="Day" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TimeSlot">
+    <Key>
+      <PropertyRef Name="TSId" />
+    </Key>
+    <Property Type="Int32" Name="TSId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="StartTime" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="EndTime" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ScheduleFacultyStudents" Relationship="FYPModel.FK_ScheduleFacultyStudent_TimeSlots" FromRole="TimeSlot" ToRole="ScheduleFacultyStudent" />
+  </EntityType>
+  <Association Name="FK_PresentationSchedule_Project">
+    <End Type="FYPModel.Project" Role="Project" Multiplicity="0..1" />
+    <End Type="FYPModel.PresentationSchedule" Role="PresentationSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="PresentationSchedule">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PresentationSchedule_ProjectMileStone">
+    <End Type="FYPModel.ProjectMileStone" Role="ProjectMileStone" Multiplicity="0..1" />
+    <End Type="FYPModel.PresentationSchedule" Role="PresentationSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectMileStone">
+        <PropertyRef Name="PMSId" />
+      </Principal>
+      <Dependent Role="PresentationSchedule">
+        <PropertyRef Name="PMSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PresentationSchedule_ProjectSession">
+    <End Type="FYPModel.ProjectSession" Role="ProjectSession" Multiplicity="0..1" />
+    <End Type="FYPModel.PresentationSchedule" Role="PresentationSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="PresentationSchedule">
+        <PropertyRef Name="PSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduleFacultyStudent_TimeSlots">
+    <End Type="FYPModel.TimeSlot" Role="TimeSlot" Multiplicity="0..1" />
+    <End Type="FYPModel.ScheduleFacultyStudent" Role="ScheduleFacultyStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TimeSlot">
+        <PropertyRef Name="TSId" />
+      </Principal>
+      <Dependent Role="ScheduleFacultyStudent">
+        <PropertyRef Name="TSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduleFacultyStudent_Project">
+    <End Type="FYPModel.Project" Role="Project" Multiplicity="0..1" />
+    <End Type="FYPModel.ScheduleFacultyStudent" Role="ScheduleFacultyStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="ScheduleFacultyStudent">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduleFacultyStudent_User">
+    <End Type="FYPModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FYPModel.ScheduleFacultyStudent" Role="ScheduleFacultyStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="ScheduleFacultyStudent">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_GetAvailableTimeOfFaculty_Result">
+    <Property Type="DateTime" Name="SelectedDate" Nullable="true" />
+    <Property Type="String" Name="FreeTime" Nullable="true" MaxLength="101" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAvailableTimeOfStudent_Result">
+    <Property Type="DateTime" Name="SelectedDate" Nullable="true" />
+    <Property Type="String" Name="FreeTime" Nullable="true" MaxLength="101" />
+  </ComplexType>
+  <EntityType Name="RoomsForPresentation">
+    <Key>
+      <PropertyRef Name="RoomId" />
+    </Key>
+    <Property Type="Int32" Name="RoomId" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PresentationSchedules" Relationship="FYPModel.FK_PresentationSchedule_RoomsForPresentation" FromRole="RoomsForPresentation" ToRole="PresentationSchedule" />
+  </EntityType>
+  <Association Name="FK_PresentationSchedule_RoomsForPresentation">
+    <End Type="FYPModel.RoomsForPresentation" Role="RoomsForPresentation" Multiplicity="0..1" />
+    <End Type="FYPModel.PresentationSchedule" Role="PresentationSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomsForPresentation">
+        <PropertyRef Name="RoomId" />
+      </Principal>
+      <Dependent Role="PresentationSchedule">
+        <PropertyRef Name="RoomNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateDocument_ProjectSession">
+    <End Type="FYPModel.ProjectSession" Role="ProjectSession" Multiplicity="0..1" />
+    <End Type="FYPModel.TemplateDocument" Role="TemplateDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="TemplateDocument">
+        <PropertyRef Name="PSId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_GetRecordsForPresentation_Result">
+    <Property Type="Int64" Name="PId" Nullable="false" />
+    <Property Type="String" Name="Tiltle" Nullable="false" MaxLength="1000" />
+    <Property Type="String" Name="Description" Nullable="false" />
+    <Property Type="String" Name="UploadedFile" Nullable="true" MaxLength="250" />
+    <Property Type="Int64" Name="UploadedBy" Nullable="false" />
+    <Property Type="DateTime" Name="UploadedDate" Nullable="false" Precision="23" />
+    <Property Type="Int16" Name="Status" Nullable="false" />
+    <Property Type="Int64" Name="StudentId" Nullable="true" />
+    <Property Type="Int64" Name="ProjectSessionId" Nullable="false" />
+    <Property Type="Int64" Name="ProposedBy" Nullable="true" />
+    <Property Type="String" Name="KeyFeatures" Nullable="false" />
+    <Property Type="Int16" Name="Complexity" Nullable="true" />
+    <Property Type="String" Name="EffortsRequired" Nullable="false" />
+    <Property Type="String" Name="Domain" Nullable="false" />
+    <Property Type="String" Name="RequiredToolsAndTech" Nullable="false" MaxLength="5000" />
+    <Property Type="String" Name="SpecialCharactersRequired" Nullable="false" MaxLength="5000" />
+    <Property Type="Int32" Name="researchGroupId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetPresentationSchedule_Result">
+    <Property Type="Int64" Name="PId" Nullable="false" />
+    <Property Type="String" Name="Tiltle" Nullable="false" MaxLength="1000" />
+    <Property Type="Time" Name="TimeFrom" Nullable="true" />
+    <Property Type="Time" Name="TimeTo" Nullable="true" />
+    <Property Type="Int64" Name="PRSCId" Nullable="false" />
+    <Property Type="Int32" Name="RoomNumber" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" />
+    <Property Type="DateTime" Name="PresentationDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_GetFreeSlotsDayBased_Result">
+    <Property Type="Int64" Name="ScheduleId" Nullable="false" />
+    <Property Type="Boolean" Name="isStudent" Nullable="true" />
+    <Property Type="Boolean" Name="isFaculty" Nullable="true" />
+    <Property Type="Int32" Name="TSId" Nullable="true" />
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="String" Name="Day" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="UserId" Nullable="true" />
+    <Property Type="String" Name="FreeSlot" Nullable="true" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="SP_GetMatchingFreeTime_Result">
+    <Property Type="Int32" Name="MatchingCount" Nullable="true" />
+    <Property Type="Int32" Name="TSId" Nullable="true" />
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="String" Name="FreeTime" Nullable="true" MaxLength="103" />
+    <Property Type="String" Name="Day" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_GetPresentationsToStudent_Result">
+    <Property Type="Int64" Name="PRSCId" Nullable="false" />
+    <Property Type="String" Name="Tiltle" Nullable="false" MaxLength="1000" />
+    <Property Type="Time" Name="TimeFrom" Nullable="true" />
+    <Property Type="Time" Name="TimeTo" Nullable="true" />
+    <Property Type="DateTime" Name="PresentationDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="PMSId" Nullable="true" />
+    <Property Type="Int64" Name="PSId" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Title" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetPresentationsToIndividualUser_Result">
+    <Property Type="Int64" Name="PRSCId" Nullable="false" />
+    <Property Type="String" Name="Tiltle" Nullable="false" MaxLength="1000" />
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="Int64" Name="sss" Nullable="false" />
+    <Property Type="Int64" Name="StudentId" Nullable="false" />
+    <Property Type="Time" Name="TimeFrom" Nullable="true" />
+    <Property Type="Time" Name="TimeTo" Nullable="true" />
+    <Property Type="DateTime" Name="PresentationDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="PMSId" Nullable="true" />
+    <Property Type="Int64" Name="PSId" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Title" Nullable="true" />
+  </ComplexType>
+  <Association Name="FK_Announcments_User">
+    <End Type="FYPModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FYPModel.Announcment" Role="Announcment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="Announcment">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MileStoneEvaluation_User">
+    <End Type="FYPModel.User" Role="User" Multiplicity="1" />
+    <End Type="FYPModel.MileStoneEvaluation" Role="MileStoneEvaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UId" />
+      </Principal>
+      <Dependent Role="MileStoneEvaluation">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_GetProjectDetailForReport_Result">
+    <Property Type="String" Name="Tiltle" Nullable="false" MaxLength="1000" />
+    <Property Type="String" Name="Description" Nullable="false" />
+    <Property Type="String" Name="supervisorname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ResearchTitle" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_GetProjectStudentsForReport_Result">
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="RegistrationNo" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_GetSubmittedMileStonesList_Result">
+    <Property Type="String" Name="Milestone" Nullable="false" MaxLength="200" />
+    <Property Type="DateTime" Name="SubmittedDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="CommentBySupervisor" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_GetUploadedDocsCommentsByPCForReport_Result">
+    <Property Type="String" Name="MileStoneName" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="StatusComment" Nullable="true" />
+    <Property Type="Boolean" Name="EvalStatus" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_GetWeeklyMeetingDetailsForReport_Result">
+    <Property Type="Int64" Name="MId" Nullable="false" />
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="590" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="DateTime" Name="MeetingDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CommentBySupervisor" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="ProjectDirectory">
+    <Key>
+      <PropertyRef Name="PDId" />
+    </Key>
+    <Property Type="Int64" Name="PDId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ProjectId" />
+    <Property Type="String" Name="UploadedFile" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="psId" />
+    <NavigationProperty Name="Project" Relationship="FYPModel.FK_ProjectDirectory_Project" FromRole="ProjectDirectory" ToRole="Project" />
+    <NavigationProperty Name="ProjectSession" Relationship="FYPModel.FK_ProjectDirectory_ProjectSession1" FromRole="ProjectDirectory" ToRole="ProjectSession" />
+  </EntityType>
+  <Association Name="FK_ProjectDirectory_Project">
+    <End Type="FYPModel.Project" Role="Project" Multiplicity="0..1" />
+    <End Type="FYPModel.ProjectDirectory" Role="ProjectDirectory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="ProjectDirectory">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDirectory_ProjectSession1">
+    <End Type="FYPModel.ProjectSession" Role="ProjectSession" Multiplicity="0..1" />
+    <End Type="FYPModel.ProjectDirectory" Role="ProjectDirectory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectSession">
+        <PropertyRef Name="PSId" />
+      </Principal>
+      <Dependent Role="ProjectDirectory">
+        <PropertyRef Name="psId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,29 @@
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\bin\Debug\MenuControl.dll
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\bin\Debug\MenuControl.pdb
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\obj\Debug\MenuControl.csprojResolveAssemblyReference.cache
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\obj\Debug\MenuControl.dll
+E:\ProjectWork\Cloth Ecomerce\Ecommerce\MenuControl\obj\Debug\MenuControl.pdb
+G:\Project\FYPAutomation\MenuControl\bin\Debug\MenuControl.dll
+G:\Project\FYPAutomation\MenuControl\bin\Debug\MenuControl.pdb
+G:\Project\FYPAutomation\MenuControl\obj\Debug\MenuControl.csprojResolveAssemblyReference.cache
+G:\Project\FYPAutomation\MenuControl\obj\Debug\MenuControl.dll
+G:\Project\FYPAutomation\MenuControl\obj\Debug\MenuControl.pdb
+G:\projects\FYPAutomation\MenuControl\bin\Debug\MenuControl.dll
+G:\projects\FYPAutomation\MenuControl\bin\Debug\MenuControl.pdb
+G:\projects\FYPAutomation\MenuControl\obj\Debug\MenuControl.csprojResolveAssemblyReference.cache
+G:\projects\FYPAutomation\MenuControl\obj\Debug\MenuControl.dll
+G:\projects\FYPAutomation\MenuControl\obj\Debug\MenuControl.pdb
+G:\FYPWork\FYPAutomation\MenuControl\bin\Debug\MenuControl.dll
+G:\FYPWork\FYPAutomation\MenuControl\bin\Debug\MenuControl.pdb
+G:\FYPWork\FYPAutomation\MenuControl\obj\Debug\MenuControl.dll
+G:\FYPWork\FYPAutomation\MenuControl\obj\Debug\MenuControl.pdb
+E:\FYP\FYP_Repository\FYPAutomation\MenuControl\bin\Debug\MenuControl.dll
+E:\FYP\FYP_Repository\FYPAutomation\MenuControl\bin\Debug\MenuControl.pdb
+E:\FYP\FYP_Repository\FYPAutomation\MenuControl\obj\Debug\MenuControl.csprojResolveAssemblyReference.cache
+E:\FYP\FYP_Repository\FYPAutomation\MenuControl\obj\Debug\MenuControl.dll
+E:\FYP\FYP_Repository\FYPAutomation\MenuControl\obj\Debug\MenuControl.pdb
+E:\FYPAutomation\MenuControl\bin\Debug\MenuControl.dll
+E:\FYPAutomation\MenuControl\bin\Debug\MenuControl.pdb
+E:\FYPAutomation\MenuControl\obj\Debug\MenuControl.csprojResolveAssemblyReference.cache
+E:\FYPAutomation\MenuControl\obj\Debug\MenuControl.dll
+E:\FYPAutomation\MenuControl\obj\Debug\MenuControl.pdb

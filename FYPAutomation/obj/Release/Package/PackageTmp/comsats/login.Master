@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="login.Master.cs" Inherits="WebApplication1.comsats.Login" %>
+
+
+<%@ Register Src="~/comsats/UserControls/CtrlFooter.ascx" TagPrefix="uc1" TagName="CtrlFooter" %>
+<%@ Register Src="~/comsats/UserControls/CtrlHeader.ascx" TagPrefix="uc1" TagName="CtrlHeader" %>
+<%@ Register Src="~/UserControls/General/CtrlScripts.ascx" TagPrefix="uc1" TagName="CtrlScripts" %>
+
+
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>COMSATS</title>
+    <webopt:BundleReference ID="BundleReference4" runat="server" path="~/Content/themes/base/css"/>
+    <webopt:BundleReference ID="BundleReference1" runat="server" Path="~/Content/css" />
+    <webopt:BundleReference ID="BundleReference2" runat="server" Path="~/Content/Manager" />
+    <webopt:BundleReference ID="BundleReference3" runat="server" Path="~/comsats/NewMenuScripts/css" />
+    
+</head>
+<body>
+    <div id="dialog" style="display:none"></div>
+    <form id="form1" runat="server">
+       
+        <uc1:CtrlHeader runat="server" ID="CtrlHeader" />
+        <div class="container-fluid">
+            <div class="row-fluid">
+                
+                
+                <div class="well clearfix" style="width: 40%; margin: 0 auto;" runat="server">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+     
+            </div>
+        </div>
+
+        <uc1:CtrlFooter runat="server" ID="CtrlFooter" />
+         <uc1:CtrlScripts runat="server" ID="CtrlScripts" />
+    </form>
+
+
+</body>
+</html>

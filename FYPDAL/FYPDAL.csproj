@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ACB8CFDC-F9BF-4E28-B0F6-17AE659DB343}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FYPDAL</RootNamespace>
+    <AssemblyName>FYPDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0-beta1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Announcment.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssignExternalProject.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthenticateUser.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Communication.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Designation.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalGroup.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FrequentAccesses.cs" />
+    <Compile Include="Func_GetExternalsNameAgainstProjectID_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FYP.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FYP.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FYP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FYP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FYP.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MileStoneEvaluation.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationSchedule.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectDirectory.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectGroup.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectMileStone.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectMileStoneDeadLine.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectSession.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResearchGroup.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoomsForPresentation.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleFacultyStudent.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_AssignedDocsToPC_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetAssignedDocumentsForGrid_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetAvailableTimeOfFaculty_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetAvailableTimeOfStudent_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetCommentsByPcMembers_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetDataForGridStudent_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetDataForGridSupervisor_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetDocDetailSubmittedBy_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetDocumentsSubmittedData.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetFreeSlotsDayBased_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetMatchingFreeTime_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetNamesOfExternalGroupMember_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetNamesofExternalsbyId_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetPresentationSchedule_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetPresentationsToIndividualUser_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetPresentationsToStudent_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetProjectDetailForReport_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetProjectStudentsForReport_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetProjectStudentsWithId_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetProjectStudentsWithReg_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetRecordsForPresentation_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetRouteHistoryOfDocs_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetSubmittedMileStonesList_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetUploadedDocsCommentsByPCForReport_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetWeeklyMeetingDetailsForReport_Result.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentsProjectNotAssigned.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisodBy.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateDocument.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeSlot.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UploadedMileStone.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UploadedMileStoneDoc.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UploadedMileStoneDocsVersion.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeeklyMeeting.cs">
+      <DependentUpon>FYP.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="FYP.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FYP.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="FYP.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FYP.edmx</DependentUpon>
+      <LastGenOutput>FYP.Context.cs</LastGenOutput>
+    </None>
+    <None Include="FYP.edmx.diagram">
+      <DependentUpon>FYP.edmx</DependentUpon>
+    </None>
+    <None Include="FYP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FYP.edmx</DependentUpon>
+      <LastGenOutput>FYP.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

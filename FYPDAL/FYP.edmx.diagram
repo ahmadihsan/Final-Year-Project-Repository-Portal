@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d28448b87e9c44819c578e1d59456809" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="FYPModel.Announcment" Width="1.5" PointX="8.625" PointY="26.5" />
+        <EntityTypeShape EntityType="FYPModel.Department" Width="1.5" PointX="3.75" PointY="36.5" />
+        <EntityTypeShape EntityType="FYPModel.Designation" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FYPModel.Project" Width="1.5" PointX="3" PointY="24.625" />
+        <EntityTypeShape EntityType="FYPModel.ProjectGroup" Width="1.5" PointX="11.625" PointY="27" />
+        <EntityTypeShape EntityType="FYPModel.ProjectMileStone" Width="1.625" PointX="0.75" PointY="20.75" />
+        <EntityTypeShape EntityType="FYPModel.ProjectMileStoneDeadLine" Width="1.5" PointX="3" PointY="20.75" />
+        <EntityTypeShape EntityType="FYPModel.ProjectSession" Width="1.5" PointX="0.75" PointY="26.25" />
+        <EntityTypeShape EntityType="FYPModel.ResearchGroup" Width="1.5" PointX="3.75" PointY="15.75" />
+        <EntityTypeShape EntityType="FYPModel.Role" Width="1.5" PointX="8.625" PointY="30.75" />
+        <EntityTypeShape EntityType="FYPModel.TemplateDocument" Width="1.875" PointX="3" PointY="46.25" />
+        <EntityTypeShape EntityType="FYPModel.UploadedMileStone" Width="2" PointX="11.625" PointY="22.125" />
+        <EntityTypeShape EntityType="FYPModel.UploadedMileStoneDoc" Width="2.25" PointX="17.375" PointY="25" />
+        <EntityTypeShape EntityType="FYPModel.UploadedMileStoneDocsVersion" Width="2.875" PointX="14.375" PointY="30.5" />
+        <AssociationConnector Association="FYPModel.FK_Announcments_ProjectSession" />
+        <AssociationConnector Association="FYPModel.FK_Project_ProjectSession" />
+        <AssociationConnector Association="FYPModel.FK_Project_ResearchGroup" />
+        <AssociationConnector Association="FYPModel.FK_ProjectGroup_Project" />
+        <AssociationConnector Association="FYPModel.FK_UploadedMileStone_Project" />
+        <AssociationConnector Association="FYPModel.FK_ProjectMileStoneDeadLines_ProjectMileStone" />
+        <AssociationConnector Association="FYPModel.FK_UploadedMileStone_ProjectMileStone" />
+        <AssociationConnector Association="FYPModel.FK_ProjectMileStoneDeadLines_ProjectSession" />
+        <AssociationConnector Association="FYPModel.FK_UploadedMileStoneDocs_UploadedMileStone" />
+        <AssociationConnector Association="FYPModel.FK_UploadedMileStoneDocs_UploadedMileStone1" />
+        <AssociationConnector Association="FYPModel.FK_UploadedMileStoneDocsVersions_UploadedMileStone" />
+        <EntityTypeShape EntityType="FYPModel.SupervisodBy" Width="1.5" PointX="14.625" PointY="27" />
+        <EntityTypeShape EntityType="FYPModel.WeeklyMeeting" Width="1.5" PointX="5.25" PointY="52.5" />
+        <AssociationConnector Association="FYPModel.FK_SupervisodBy_Project" />
+        <AssociationConnector Association="FYPModel.FK_WeeklyMeetings_Project" />
+        <EntityTypeShape EntityType="FYPModel.PresentationSchedule" Width="1.875" PointX="5.25" PointY="19.25" />
+        <EntityTypeShape EntityType="FYPModel.ScheduleFacultyStudent" Width="2" PointX="11.625" PointY="30.5" />
+        <EntityTypeShape EntityType="FYPModel.TimeSlot" Width="1.5" PointX="9.375" PointY="34" />
+        <AssociationConnector Association="FYPModel.FK_PresentationSchedule_Project" />
+        <AssociationConnector Association="FYPModel.FK_PresentationSchedule_ProjectMileStone" />
+        <AssociationConnector Association="FYPModel.FK_PresentationSchedule_ProjectSession" />
+        <AssociationConnector Association="FYPModel.FK_ScheduleFacultyStudent_TimeSlots" />
+        <AssociationConnector Association="FYPModel.FK_ScheduleFacultyStudent_Project" />
+        <EntityTypeShape EntityType="FYPModel.RoomsForPresentation" Width="1.5" PointX="3" PointY="13.125" />
+        <AssociationConnector Association="FYPModel.FK_PresentationSchedule_RoomsForPresentation" />
+        <AssociationConnector Association="FYPModel.FK_TemplateDocument_ProjectSession" />
+        <EntityTypeShape EntityType="FYPModel.ProjectDirectory" Width="1.5" PointX="5.25" PointY="32.75" />
+        <AssociationConnector Association="FYPModel.FK_ProjectDirectory_Project" />
+        <AssociationConnector Association="FYPModel.FK_ProjectDirectory_ProjectSession1" />
+        <EntityTypeShape EntityType="FYPModel.Communication" Width="1.5" PointX="8.625" PointY="21.25" />
+        <AssociationConnector Association="FYPModel.FK_Communication_Project" />
+        <EntityTypeShape EntityType="FYPModel.AssignExternalProject" Width="1.5" PointX="11.25" PointY="19" />
+        <AssociationConnector Association="FYPModel.FK_AssignExternalProject_Project" />
+        <AssociationConnector Association="FYPModel.FK_AssignExternalProject_ProjectSession" />
+        <EntityTypeShape EntityType="FYPModel.User" Width="1.5" PointX="18.875" PointY="30.5" />
+        <AssociationConnector Association="FYPModel.FK_Announcments_User" />
+        <AssociationConnector Association="FYPModel.FK_Communication_User" />
+        <AssociationConnector Association="FYPModel.FK_Communication_User_From" />
+        <AssociationConnector Association="FYPModel.FK_Communication_User_To" />
+        <AssociationConnector Association="FYPModel.FK_User_Department" />
+        <AssociationConnector Association="FYPModel.FK_Project_User" />
+        <AssociationConnector Association="FYPModel.FK_Project_User1" />
+        <AssociationConnector Association="FYPModel.FK_ProjectGroup_User" />
+        <AssociationConnector Association="FYPModel.FK_User_ProjectSession" />
+        <AssociationConnector Association="FYPModel.FK_User_ResearchGroup" />
+        <AssociationConnector Association="FYPModel.FK_Role_User" />
+        <AssociationConnector Association="FYPModel.FK_User_Role" />
+        <AssociationConnector Association="FYPModel.FK_ScheduleFacultyStudent_User" />
+        <AssociationConnector Association="FYPModel.FK_SupervisodBy_User" />
+        <AssociationConnector Association="FYPModel.FK_UploadedMileStone_User" />
+        <AssociationConnector Association="FYPModel.FK_UploadedMileStoneDocs_User" />
+        <EntityTypeShape EntityType="FYPModel.ExternalGroup" Width="1.5" PointX="21.125" PointY="30.75" />
+        <AssociationConnector Association="FYPModel.FK__ExternalG__Ext_U__3BA0BFE9" />
+        <AssociationConnector Association="FYPModel.FK__ExternalG__Ext_U__3C94E422" />
+        <AssociationConnector Association="FYPModel.FK__ExternalG__Ext_u__3D89085B" />
+        <AssociationConnector Association="FYPModel.FK__ExternalG__Proje__3E7D2C94" />
+        <AssociationConnector Association="FYPModel.FK__ExternalG__Proje__3F7150CD" />
+        <AssociationConnector Association="FYPModel.FK_PresentationSchedule_Evaluator1" />
+        <AssociationConnector Association="FYPModel.FK_PresentationSchedule_Evaluator2" />
+        <AssociationConnector Association="FYPModel.FK_PresentationSchedule_Evaluator3" />
+        <EntityTypeShape EntityType="FYPModel.MileStoneEvaluation" Width="2" PointX="21.125" PointY="25.375" />
+        <AssociationConnector Association="FYPModel.FK_MileStoneEvaluation_Project" />
+        <AssociationConnector Association="FYPModel.FK_MileStoneEvaluation_ProjectMileStone" />
+        <AssociationConnector Association="FYPModel.FK_MileStoneEvaluation_User" />
+        <AssociationConnector Association="FYPModel.FK_MileStoneEvaluation_User1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

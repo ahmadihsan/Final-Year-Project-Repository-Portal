@@ -1,0 +1,10 @@
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Release\FYPDAL.dll.config
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Release\FYPDAL.dll
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Release\FYPDAL.pdb
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Release\EntityFramework.dll
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Release\EntityFramework.SqlServer.dll
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Release\EntityFramework.xml
+G:\FYPWork\FYPAutomation\FYPDAL\bin\Release\EntityFramework.SqlServer.xml
+G:\FYPWork\FYPAutomation\FYPDAL\obj\Release\FYPDAL.csprojResolveAssemblyReference.cache
+G:\FYPWork\FYPAutomation\FYPDAL\obj\Release\FYPDAL.dll
+G:\FYPWork\FYPAutomation\FYPDAL\obj\Release\FYPDAL.pdb
